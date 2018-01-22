@@ -9,7 +9,8 @@ class Home extends Component {
 			about: true,
 			projects: true,
 			photography: true,
-			contact: true
+			contact: true,
+			mouseFocus: ""
 		};
 	}
 
@@ -74,6 +75,7 @@ class Home extends Component {
 							</Header>
 						</Grid.Row>
 					</Transition>
+
 					<Transition
 						animation={"pulse"}
 						duration={500}
@@ -90,6 +92,7 @@ class Home extends Component {
 							</Header>
 						</Grid.Row>
 					</Transition>
+
 					<Transition
 						animation={"pulse"}
 						duration={500}
