@@ -10,9 +10,32 @@ class Menu extends Component {
 			projects: true,
 			photography: true,
 			contact: true,
-			mouseFocus: ""
+			hovered: ""
 		};
 	}
+
+	handleMouseOver = ev => {
+		if (ev.target.className === "ui header") {
+			console.log("hovering: ", ev.target.innerText.slice(0, -1));
+			let hovered = ev.target.innerText.slice(0, -1);
+
+			this.setState(
+				{
+					hovered
+				},
+				() => console.log("state: ", this.state)
+			);
+		}
+	};
+
+	handleMouseOut = ev => {
+		this.setState(
+			{
+				hovered: ""
+			},
+			() => console.log("state: ", this.state)
+		);
+	};
 
 	toggleVisibility = ev => {
 		let attr = ev.target.innerText.slice(0, -1);
@@ -37,14 +60,32 @@ class Menu extends Component {
 					key={item.name}
 				>
 					<Grid.Row style={{ height: "100px" }}>
-						<Header
-							as="h2"
-							style={{ fontSize: "3em" }}
-							onClick={this.toggleVisibility}
-						>
-							<Icon name={item.icon} style={{ marginRight: "20px" }} />
-							{item.name + "."}
-						</Header>
+						{this.state.hovered === item.name ? (
+							<Header
+								as="h2"
+								style={{ fontSize: "3em", color: "#C5C1C0" }}
+								onClick={this.toggleVisibility}
+								onMouseOver={this.handleMouseOver}
+								onMouseOut={this.handleMouseOut}
+							>
+								<Icon
+									name={item.icon}
+									style={{ marginRight: "20px", color: "#C5C1C0" }}
+								/>
+								{item.name + "."}
+							</Header>
+						) : (
+							<Header
+								as="h2"
+								style={{ fontSize: "3em" }}
+								onClick={this.toggleVisibility}
+								onMouseOver={this.handleMouseOver}
+								onMouseOut={this.handleMouseOut}
+							>
+								<Icon name={item.icon} style={{ marginRight: "20px" }} />
+								{item.name + "."}
+							</Header>
+						)}
 					</Grid.Row>
 				</Transition>
 			);
