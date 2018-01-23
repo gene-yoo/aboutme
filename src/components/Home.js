@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid, Header, Image, Transition } from "semantic-ui-react";
 import { withRouter, Switch, Route } from "react-router-dom";
 import Menu from "./Menu";
+import About from "./About";
 
 class Home extends Component {
 	constructor(props) {
@@ -36,7 +37,15 @@ class Home extends Component {
 						</Grid.Row>
 
 						<Switch>
-							<Route exact path="/about" render={() => <div>{"About"}</div>} />
+							<Route
+								exact
+								path="/about"
+								render={() => (
+									<div>
+										<About />
+									</div>
+								)}
+							/>
 							<Route
 								exact
 								path="/projects"
