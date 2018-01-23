@@ -16,7 +16,6 @@ class Menu extends Component {
 
 	handleMouseOver = ev => {
 		if (ev.target.className === "ui header") {
-			console.log("hovering: ", ev.target.innerText.slice(0, -1));
 			let hovered = ev.target.innerText.slice(0, -1);
 
 			this.setState(
