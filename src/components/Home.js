@@ -7,18 +7,18 @@ class Home extends Component {
 		super(props);
 
 		this.state = {
-			content: false
+			content: true
 		};
 	}
 
-	componentDidMount() {
-		this.setState(
-			{
-				content: true
-			},
-			() => console.log("inside comp did mount, state: ", this.state)
-		);
-	}
+	// componentDidMount() {
+	// 	this.setState(
+	// 		{
+	// 			content: true
+	// 		},
+	// 		() => console.log("inside comp did mount, state: ", this.state)
+	// 	);
+	// }
 
 	render() {
 		return (
@@ -26,6 +26,7 @@ class Home extends Component {
 				animation={"fade"}
 				duration={1750}
 				visible={this.state.content}
+				transitionOnMount={true}
 			>
 				<Grid centered columns={2}>
 					<Grid.Column style={{ minWidth: "400px", width: "25%" }}>
