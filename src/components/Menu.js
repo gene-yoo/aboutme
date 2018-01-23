@@ -57,7 +57,11 @@ class Menu extends Component {
 						{this.state.hovered === item.name ? (
 							<Header
 								as="h2"
-								style={{ fontSize: "3em", color: "#C5C1C0" }}
+								style={{
+									fontSize: "3em",
+									color: "#C5C1C0",
+									cursor: "pointer"
+								}}
 								onClick={this.toggleVisibility}
 								onMouseOver={this.handleMouseOver}
 								onMouseOut={this.handleMouseOut}
