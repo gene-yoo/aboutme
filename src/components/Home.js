@@ -36,11 +36,7 @@ class Home extends Component {
 						</Grid.Row>
 
 						<Switch>
-							<Route
-								exact
-								path="/about"
-								render={() => <div>{"About Page"}</div>}
-							/>
+							<Route exact path="/about" render={() => <div>{"About"}</div>} />
 							<Route
 								exact
 								path="/projects"
