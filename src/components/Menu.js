@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import { Grid, Header, Transition, Icon } from "semantic-ui-react";
 
 class Menu extends Component {
@@ -18,22 +19,16 @@ class Menu extends Component {
 		if (ev.target.className === "ui header") {
 			let hovered = ev.target.innerText.slice(0, -1);
 
-			this.setState(
-				{
-					hovered
-				},
-				() => console.log("state: ", this.state)
-			);
+			this.setState({
+				hovered
+			});
 		}
 	};
 
 	handleMouseOut = ev => {
-		this.setState(
-			{
-				hovered: ""
-			},
-			() => console.log("state: ", this.state)
-		);
+		this.setState({
+			hovered: ""
+		});
 	};
 
 	toggleVisibility = ev => {
@@ -44,7 +39,7 @@ class Menu extends Component {
 				{
 					[attr]: !this.state[attr]
 				},
-				() => console.log("state: ", this.state)
+				() => this.props.history.push(`/${attr}`)
 			);
 		}
 	};
@@ -103,4 +98,4 @@ class Menu extends Component {
 	}
 }
 
-export default Menu;
+export default withRouter(Menu);

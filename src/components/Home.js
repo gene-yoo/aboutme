@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Header, Image, Transition } from "semantic-ui-react";
+import { withRouter, Switch, Route } from "react-router-dom";
 import Menu from "./Menu";
 
 class Home extends Component {
@@ -10,15 +11,6 @@ class Home extends Component {
 			content: true
 		};
 	}
-
-	// componentDidMount() {
-	// 	this.setState(
-	// 		{
-	// 			content: true
-	// 		},
-	// 		() => console.log("inside comp did mount, state: ", this.state)
-	// 	);
-	// }
 
 	render() {
 		return (
@@ -43,7 +35,29 @@ class Home extends Component {
 							</Header>
 						</Grid.Row>
 
-						<Menu />
+						<Switch>
+							<Route
+								exact
+								path="/about"
+								render={() => <div>{"About Page"}</div>}
+							/>
+							<Route
+								exact
+								path="/projects"
+								render={() => <div>{"Technical Projects"}</div>}
+							/>
+							<Route
+								exact
+								path="/photography"
+								render={() => <div>{"Photography"}</div>}
+							/>
+							<Route
+								exact
+								path="/contact"
+								render={() => <div>{"Contact"}</div>}
+							/>
+							<Route exact path="/" render={() => <Menu />} />
+						</Switch>
 					</Grid.Column>
 				</Grid>
 			</Transition>
@@ -51,4 +65,4 @@ class Home extends Component {
 	}
 }
 
-export default Home;
+export default withRouter(Home);
