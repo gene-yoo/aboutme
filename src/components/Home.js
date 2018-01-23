@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Header, Image, Transition } from "semantic-ui-react";
 import { withRouter, Switch, Route } from "react-router-dom";
+import Profile from "./Profile";
 import Menu from "./Menu";
 import About from "./About";
 import Projects from "./Projects";
@@ -23,42 +24,39 @@ class Home extends Component {
 				transitionOnMount={true}
 			>
 				<Grid centered>
-					<Grid.Column style={{ minWidth: "400px", width: "25%" }}>
-						<Grid.Row style={{ height: "100px" }} />
-
-						<Grid.Row style={{ height: "275px", marginBottom: "10px" }}>
-							<Image
-								src="https://i.imgur.com/kzNKPA8.jpg"
-								size="small"
-								circular
-							/>
-							<Header as="h2" style={{ fontSize: "3em" }}>
-								{"gene yoo"}
-							</Header>
-						</Grid.Row>
-
-						<Switch>
-							<Route
-								exact
-								path="/about"
-								render={() => (
-									<div>
-										<About />
-									</div>
-								)}
-							/>
-							<Route
-								exact
-								path="/projects"
-								render={() => (
-									<div>
-										<Projects />
-									</div>
-								)}
-							/>
-							<Route exact path="/" render={() => <Menu />} />
-						</Switch>
-					</Grid.Column>
+					<Switch>
+						<Route
+							exact
+							path="/about"
+							render={() => (
+								<Grid.Column style={{ minWidth: "400px", width: "25%" }}>
+									<Grid.Row style={{ height: "100px" }} />
+									<About />
+								</Grid.Column>
+							)}
+						/>
+						<Route
+							exact
+							path="/projects"
+							render={() => (
+								<Grid.Column style={{ minWidth: "400px", width: "25%" }}>
+									<Grid.Row style={{ height: "100px" }} />
+									<Projects />
+								</Grid.Column>
+							)}
+						/>
+						<Route
+							exact
+							path="/"
+							render={() => (
+								<Grid.Column style={{ minWidth: "400px", width: "25%" }}>
+									<Grid.Row style={{ height: "100px" }} />
+									<Profile />
+									<Menu />
+								</Grid.Column>
+							)}
+						/>
+					</Switch>
 				</Grid>
 			</Transition>
 		);
