@@ -46,7 +46,7 @@ class Menu extends Component {
 		}
 	};
 
-	renderInternalItems = items => {
+	renderItems = items => {
 		return items.map(item => {
 			return (
 				<Transition
@@ -63,7 +63,11 @@ class Menu extends Component {
 								color: this.state.hovered === item.name ? "#C5C1C0" : "black",
 								cursor: "pointer"
 							}}
-							onClick={this.toggleVisibility}
+							onClick={
+								item.type === "external"
+									? () => window.open(item.link)
+									: this.toggleVisibility
+							}
 							onMouseOver={this.handleMouseOver}
 							onMouseOut={this.handleMouseOut}
 						>
@@ -82,72 +86,25 @@ class Menu extends Component {
 		});
 	};
 
-	renderExternalItems = items => {
-		return items.map(item => {
-			return (
-				<Transition
-					animation={"pulse"}
-					duration={500}
-					visible={this.state[item.name]}
-					key={item.name}
-				>
-					<Grid.Row style={{ height: "100px" }}>
-						<Header
-							as="h2"
-							style={{
-								fontSize: "3em",
-								color: this.state.hovered === item.name ? "#C5C1C0" : "black",
-								cursor: "pointer"
-							}}
-							onMouseOver={this.handleMouseOver}
-							onMouseOut={this.handleMouseOut}
-						>
-							<Icon
-								name={item.icon}
-								style={{
-									marginRight: "20px",
-									display: "inline-block",
-									color: this.state.hovered === item.name ? "#C5C1C0" : "black"
-								}}
-							/>
-							<a
-								href={item.link}
-								target="_blank"
-								style={{
-									color: this.state.hovered === item.name ? "#C5C1C0" : "black",
-									display: "inline-block"
-								}}
-							>
-								{item.name + "."}
-							</a>
-						</Header>
-					</Grid.Row>
-				</Transition>
-			);
-		});
-	};
-
 	render() {
-		const internal = [
-			{ name: "about", icon: "bookmark" },
-			{ name: "projects", icon: "code" }
-		];
-
-		const external = [
-			{ name: "github", icon: "github", link: "https://github.com/gene-yoo" },
+		const items = [
+			{ name: "about", icon: "bookmark", type: "internal" },
+			{ name: "projects", icon: "code", type: "internal" },
+			{
+				name: "github",
+				icon: "github",
+				type: "external",
+				link: "https://github.com/gene-yoo"
+			},
 			{
 				name: "instagram",
 				icon: "instagram",
+				type: "external",
 				link: "https://www.instagram.com/geneyoo/"
 			}
 		];
 
-		return (
-			<div>
-				{this.renderInternalItems(internal)}
-				{this.renderExternalItems(external)}
-			</div>
-		);
+		return <div>{this.renderItems(items)}</div>;
 	}
 }
 
