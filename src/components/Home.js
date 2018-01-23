@@ -3,6 +3,7 @@ import { Grid, Header, Image, Transition } from "semantic-ui-react";
 import { withRouter, Switch, Route } from "react-router-dom";
 import Menu from "./Menu";
 import About from "./About";
+import Projects from "./Projects";
 
 class Home extends Component {
 	constructor(props) {
@@ -49,17 +50,11 @@ class Home extends Component {
 							<Route
 								exact
 								path="/projects"
-								render={() => <div>{"Technical Projects"}</div>}
-							/>
-							<Route
-								exact
-								path="/photography"
-								render={() => <div>{"Photography"}</div>}
-							/>
-							<Route
-								exact
-								path="/contact"
-								render={() => <div>{"Contact"}</div>}
+								render={() => (
+									<div>
+										<Projects />
+									</div>
+								)}
 							/>
 							<Route exact path="/" render={() => <Menu />} />
 						</Switch>

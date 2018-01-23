@@ -11,6 +11,8 @@ class Menu extends Component {
 			projects: true,
 			photography: true,
 			contact: true,
+			github: true,
+			instagram: true,
 			hovered: ""
 		};
 	}
@@ -44,7 +46,7 @@ class Menu extends Component {
 		}
 	};
 
-	renderItems = items => {
+	renderInternalItems = items => {
 		return items.map(item => {
 			return (
 				<Transition
@@ -54,36 +56,71 @@ class Menu extends Component {
 					key={item.name}
 				>
 					<Grid.Row style={{ height: "100px" }}>
-						{this.state.hovered === item.name ? (
-							<Header
-								as="h2"
+						<Header
+							as="h2"
+							style={{
+								fontSize: "3em",
+								color: this.state.hovered === item.name ? "#C5C1C0" : "black",
+								cursor: "pointer"
+							}}
+							onClick={this.toggleVisibility}
+							onMouseOver={this.handleMouseOver}
+							onMouseOut={this.handleMouseOut}
+						>
+							<Icon
+								name={item.icon}
 								style={{
-									fontSize: "3em",
-									color: "#C5C1C0",
-									cursor: "pointer"
+									marginRight: "20px",
+									color: this.state.hovered === item.name ? "#C5C1C0" : "black"
 								}}
-								onClick={this.toggleVisibility}
-								onMouseOver={this.handleMouseOver}
-								onMouseOut={this.handleMouseOut}
+							/>
+							{item.name + "."}
+						</Header>
+					</Grid.Row>
+				</Transition>
+			);
+		});
+	};
+
+	renderExternalItems = items => {
+		return items.map(item => {
+			return (
+				<Transition
+					animation={"pulse"}
+					duration={500}
+					visible={this.state[item.name]}
+					key={item.name}
+				>
+					<Grid.Row style={{ height: "100px" }}>
+						<Header
+							as="h2"
+							style={{
+								fontSize: "3em",
+								color: this.state.hovered === item.name ? "#C5C1C0" : "black",
+								cursor: "pointer"
+							}}
+							onMouseOver={this.handleMouseOver}
+							onMouseOut={this.handleMouseOut}
+						>
+							<Icon
+								name={item.icon}
+								style={{
+									marginRight: "20px",
+									display: "inline-block",
+									color: this.state.hovered === item.name ? "#C5C1C0" : "black"
+								}}
+							/>
+							<a
+								href={item.link}
+								target="_blank"
+								style={{
+									color: this.state.hovered === item.name ? "#C5C1C0" : "black",
+									display: "inline-block"
+								}}
 							>
-								<Icon
-									name={item.icon}
-									style={{ marginRight: "20px", color: "#C5C1C0" }}
-								/>
 								{item.name + "."}
-							</Header>
-						) : (
-							<Header
-								as="h2"
-								style={{ fontSize: "3em" }}
-								onClick={this.toggleVisibility}
-								onMouseOver={this.handleMouseOver}
-								onMouseOut={this.handleMouseOut}
-							>
-								<Icon name={item.icon} style={{ marginRight: "20px" }} />
-								{item.name + "."}
-							</Header>
-						)}
+							</a>
+						</Header>
 					</Grid.Row>
 				</Transition>
 			);
@@ -91,14 +128,26 @@ class Menu extends Component {
 	};
 
 	render() {
-		const items = [
+		const internal = [
 			{ name: "about", icon: "bookmark" },
-			{ name: "projects", icon: "code" },
-			{ name: "photography", icon: "camera retro" },
-			{ name: "contact", icon: "question" }
+			{ name: "projects", icon: "code" }
 		];
 
-		return <div>{this.renderItems(items)}</div>;
+		const external = [
+			{ name: "github", icon: "github", link: "https://github.com/gene-yoo" },
+			{
+				name: "instagram",
+				icon: "instagram",
+				link: "https://www.instagram.com/geneyoo/"
+			}
+		];
+
+		return (
+			<div>
+				{this.renderInternalItems(internal)}
+				{this.renderExternalItems(external)}
+			</div>
+		);
 	}
 }
 
