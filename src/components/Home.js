@@ -22,7 +22,7 @@ class Home extends Component {
 				visible={this.state.content}
 				transitionOnMount={true}
 			>
-				<Grid centered columns={2}>
+				<Grid centered>
 					<Grid.Column style={{ minWidth: "400px", width: "25%" }}>
 						<Grid.Row style={{ height: "100px" }} />
 
