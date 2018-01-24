@@ -78,7 +78,7 @@ class Home extends Component {
 											</div>
 										</Grid.Column>
 										<Grid.Column
-											style={{ minWidth: "400px", maxWidth: "800px" }}
+											style={{ minWidth: "400px", maxWidth: "1000px" }}
 										>
 											<Grid.Row style={{ height: "100px" }} />
 											<Projects />

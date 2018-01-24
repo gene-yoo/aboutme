@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
+import { Button, Grid } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
 const About = props => {
@@ -7,7 +7,7 @@ const About = props => {
 	console.log("----------------------------");
 
 	return (
-		<div>
+		<Grid.Row>
 			<Button
 				onClick={() => {
 					props.history.push("/");
@@ -28,7 +28,7 @@ const About = props => {
 					}
 				</span>
 			</div>
-		</div>
+		</Grid.Row>
 	);
 };
 

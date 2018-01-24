@@ -88,6 +88,7 @@ class Menu extends Component {
 
 	render() {
 		console.log("inside menu, render");
+		console.log("state: ", this.state);
 		console.log("----------------------------");
 
 		const items = [
@@ -107,7 +108,7 @@ class Menu extends Component {
 			}
 		];
 
-		return <div>{this.renderItems(items)}</div>;
+		return <Grid.Row>{this.renderItems(items)}</Grid.Row>;
 	}
 }
 
