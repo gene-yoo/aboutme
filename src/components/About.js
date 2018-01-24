@@ -3,6 +3,9 @@ import { Button } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
 const About = props => {
+	console.log("inside about, render");
+	console.log("----------------------------");
+
 	return (
 		<div>
 			<Button

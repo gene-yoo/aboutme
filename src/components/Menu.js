@@ -87,6 +87,9 @@ class Menu extends Component {
 	};
 
 	render() {
+		console.log("inside menu, render");
+		console.log("----------------------------");
+
 		const items = [
 			{ name: "about", icon: "bookmark", type: "internal" },
 			{ name: "projects", icon: "code", type: "internal" },
