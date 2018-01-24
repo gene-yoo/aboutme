@@ -23,12 +23,7 @@ const list = [
 
 const Projects = props => {
 	return (
-		<Grid.Row
-			style={{
-				overflowY: "scroll",
-				height: "800px"
-			}}
-		>
+		<Grid.Row>
 			<Button
 				onClick={() => {
 					props.history.push("/");
@@ -37,31 +32,38 @@ const Projects = props => {
 			>
 				Back to Menu
 			</Button>
-			<Transition.Group animation={"fly left"} duration={2000}>
-				{list.map(project => {
-					return (
-						<div style={{ marginBottom: "25px" }} key={project.title}>
-							<div style={{ marginBottom: "25px" }}>
-								<Header as="h2">{project.title}</Header>
-								<span style={{ marginRight: "25px" }}>{project.demo}</span>
-								<span>{project.github}</span>
-								<div
-									style={{
-										backgroundColor: "yellow",
-										width: "600px",
-										height: "350px",
-										margin: "15px"
-									}}
-								>
-									{project.screenshot}
+			<div
+				style={{
+					overflowY: "scroll",
+					height: "750px"
+				}}
+			>
+				<Transition.Group animation={"fly left"} duration={2000}>
+					{list.map(project => {
+						return (
+							<div style={{ marginBottom: "25px" }} key={project.title}>
+								<div style={{ marginBottom: "25px" }}>
+									<Header as="h2">{project.title}</Header>
+									<span style={{ marginRight: "25px" }}>{project.demo}</span>
+									<span>{project.github}</span>
+									<div
+										style={{
+											backgroundColor: "yellow",
+											width: "600px",
+											height: "350px",
+											margin: "15px"
+										}}
+									>
+										{project.screenshot}
+									</div>
+									<span>{project.description}</span>
 								</div>
-								<span>{project.description}</span>
+								<Divider />
 							</div>
-							<Divider />
-						</div>
-					);
-				})}
-			</Transition.Group>
+						);
+					})}
+				</Transition.Group>
+			</div>
 		</Grid.Row>
 	);
 };
