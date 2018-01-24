@@ -18,7 +18,7 @@ class Menu extends Component {
 	}
 
 	handleMouseOver = ev => {
-		if (ev.target.className === "ui header") {
+		if (ev.target.className === "menuItem") {
 			let hovered = ev.target.innerText.slice(0, -1);
 
 			this.setState({
@@ -34,9 +34,8 @@ class Menu extends Component {
 	};
 
 	toggleVisibility = ev => {
-		let attr = ev.target.innerText.slice(0, -1);
-
-		if (ev.target.className === "ui header") {
+		if (ev.target.className === "menuItem") {
+			let attr = ev.target.innerText.slice(0, -1);
 			this.setState(
 				{
 					[attr]: !this.state[attr]
@@ -56,13 +55,11 @@ class Menu extends Component {
 					key={item.name}
 				>
 					<Grid.Row style={{ height: "100px" }}>
-						<Header
-							as="h2"
+						<div
 							style={{
-								fontSize: "3em",
-								color: this.state.hovered === item.name ? "#C5C1C0" : "black",
-								cursor: "pointer"
+								fontSize: "3em"
 							}}
+							className="menuItem"
 							onClick={
 								item.type === "external"
 									? () => window.open(item.link)
@@ -71,15 +68,31 @@ class Menu extends Component {
 							onMouseOver={this.handleMouseOver}
 							onMouseOut={this.handleMouseOut}
 						>
-							<Icon
-								name={item.icon}
+							<div
 								style={{
-									marginRight: "20px",
+									display: "inline-block"
+								}}
+							>
+								<Icon
+									name={item.icon}
+									style={{
+										marginRight: "20px",
+										color:
+											this.state.hovered === item.name ? "#C5C1C0" : "black"
+									}}
+								/>
+							</div>
+							<div
+								style={{
+									display: "inline-block",
+									cursor: "pointer",
 									color: this.state.hovered === item.name ? "#C5C1C0" : "black"
 								}}
-							/>
-							{item.name + "."}
-						</Header>
+								className="menuItem"
+							>
+								{item.name + "."}
+							</div>
+						</div>
 					</Grid.Row>
 				</Transition>
 			);
@@ -105,6 +118,12 @@ class Menu extends Component {
 				icon: "instagram",
 				type: "external",
 				link: "https://www.instagram.com/geneyoo/"
+			},
+			{
+				name: "linkedin",
+				icon: "linkedin",
+				type: "external",
+				link: "https://www.linkedin.com/in/geneyyoo/"
 			}
 		];
 
