@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Header, Image, Transition } from "semantic-ui-react";
+import { Grid, Header, Image, Transition, Divider } from "semantic-ui-react";
 import { withRouter, Switch, Route } from "react-router-dom";
 import Profile from "./Profile";
 import Menu from "./Menu";
@@ -17,48 +17,78 @@ class Home extends Component {
 
 	render() {
 		return (
-			<Transition
-				animation={"fade"}
-				duration={1750}
-				visible={this.state.content}
-				transitionOnMount={true}
-			>
-				<Grid centered>
-					<Switch>
-						<Route
-							exact
-							path="/about"
-							render={() => (
-								<Grid.Column style={{ minWidth: "400px", width: "25%" }}>
-									<Grid.Row style={{ height: "100px" }} />
-									<About />
-								</Grid.Column>
-							)}
-						/>
-						<Route
-							exact
-							path="/projects"
-							render={() => (
-								<Grid.Column style={{ minWidth: "400px", width: "25%" }}>
-									<Grid.Row style={{ height: "100px" }} />
-									<Projects />
-								</Grid.Column>
-							)}
-						/>
-						<Route
-							exact
-							path="/"
-							render={() => (
+			<Grid centered>
+				<Switch>
+					<Route
+						exact
+						path="/about"
+						render={() => (
+							<Transition
+								animation={"fade"}
+								duration={1750}
+								visible={this.state.content}
+								transitionOnMount={true}
+							>
+								<Grid.Row columns={3}>
+									<Grid.Column style={{ minWidth: "400px", maxWidth: "400px" }}>
+										<Grid.Row style={{ height: "100px" }} />
+										<Profile />
+										<Menu />
+									</Grid.Column>
+									<Grid.Column style={{ minWidth: "400px", maxWidth: "800px" }}>
+										<Grid.Row style={{ height: "100px" }} />
+										<About />
+									</Grid.Column>
+								</Grid.Row>
+							</Transition>
+						)}
+					/>
+					<Route
+						exact
+						path="/projects"
+						render={() => (
+							<Transition
+								animation={"fade"}
+								duration={1750}
+								visible={this.state.content}
+								transitionOnMount={true}
+							>
+								<Grid.Row columns={3}>
+									<Grid.Column style={{ minWidth: "400px", maxWidth: "400px" }}>
+										<Grid.Row style={{ height: "100px" }} />
+										<div>
+											<Profile />
+											<Menu />
+										</div>
+									</Grid.Column>
+									<Grid.Column style={{ minWidth: "400px", maxWidth: "800px" }}>
+										<Grid.Row style={{ height: "100px" }} />
+										<Projects />
+									</Grid.Column>
+								</Grid.Row>
+							</Transition>
+						)}
+					/>
+					<Route
+						exact
+						path="/"
+						render={() => (
+							<Transition
+								animation={"fade"}
+								duration={1750}
+								visible={this.state.content}
+								transitionOnMount={true}
+							>
 								<Grid.Column style={{ minWidth: "400px", width: "25%" }}>
 									<Grid.Row style={{ height: "100px" }} />
 									<Profile />
 									<Menu />
 								</Grid.Column>
-							)}
-						/>
-					</Switch>
-				</Grid>
-			</Transition>
+							</Transition>
+						)}
+					/>
+				</Switch>
+			</Grid>
 		);
 	}
 }
