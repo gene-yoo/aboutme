@@ -23,7 +23,12 @@ const list = [
 
 const Projects = props => {
 	return (
-		<Grid.Row>
+		<Grid.Row
+			style={{
+				overflowY: "scroll",
+				height: "800px"
+			}}
+		>
 			<Button
 				onClick={() => {
 					props.history.push("/");
