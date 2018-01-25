@@ -4,10 +4,10 @@ import { withRouter } from "react-router-dom";
 
 const list = [
 	{
-		title: "Project Title 1",
+		title: "LOOT",
 		demo: "Link to Demo",
 		github: "Link to Github",
-		screenshot: "Test Screenshot",
+		screenshot: "https://i.imgur.com/cYohnG9.png",
 		description:
 			'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
 	},
@@ -15,7 +15,7 @@ const list = [
 		title: "Project Title 2",
 		demo: "Link to Demo",
 		github: "Link to Github",
-		screenshot: "Test Screenshot",
+		screenshot: "https://i.imgur.com/cYohnG9.png",
 		description:
 			'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
 	}
@@ -51,13 +51,21 @@ const Projects = props => {
 									<span>{project.github}</span>
 									<div
 										style={{
-											backgroundColor: "yellow",
 											width: "600px",
 											height: "350px",
-											margin: "15px"
+											margin: "15px",
+											textAlign: "center"
 										}}
 									>
-										{project.screenshot}
+										<img
+											src={project.screenshot}
+											alt=""
+											style={{
+												height: "100%",
+												border: "2px solid #e3e8ef",
+												boxShadow: "5px 5px #e3e8ef"
+											}}
+										/>
 									</div>
 									<span>{project.description}</span>
 								</div>
