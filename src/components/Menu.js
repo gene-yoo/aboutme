@@ -78,7 +78,10 @@ class Menu extends Component {
 									style={{
 										marginRight: "20px",
 										color:
-											this.state.hovered === item.name ? "#C5C1C0" : "black"
+											this.state.hovered === item.name ||
+											this.props.location.pathname === `/${item.name}`
+												? "#C5C1C0"
+												: "black"
 									}}
 								/>
 							</div>
@@ -86,7 +89,11 @@ class Menu extends Component {
 								style={{
 									display: "inline-block",
 									cursor: "pointer",
-									color: this.state.hovered === item.name ? "#C5C1C0" : "black"
+									color:
+										this.state.hovered === item.name ||
+										this.props.location.pathname === `/${item.name}`
+											? "#C5C1C0"
+											: "black"
 								}}
 								className="menuItem"
 							>
@@ -101,6 +108,7 @@ class Menu extends Component {
 
 	render() {
 		console.log("inside menu, render");
+		console.log("props: ", this.props);
 		console.log("state: ", this.state);
 		console.log("----------------------------");
 
