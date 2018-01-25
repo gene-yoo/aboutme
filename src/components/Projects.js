@@ -41,7 +41,10 @@ const Projects = props => {
 				<Transition.Group animation={"fly left"} duration={2000}>
 					{list.map(project => {
 						return (
-							<div style={{ marginBottom: "25px" }} key={project.title}>
+							<div
+								style={{ marginBottom: "25px", width: "725px" }}
+								key={project.title}
+							>
 								<div style={{ marginBottom: "25px" }}>
 									<Header as="h2">{project.title}</Header>
 									<span style={{ marginRight: "25px" }}>{project.demo}</span>
