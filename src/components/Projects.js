@@ -1,31 +1,41 @@
 import React from "react";
-import { Button, Grid, Header, Divider, Transition } from "semantic-ui-react";
+import {
+	Button,
+	Grid,
+	Header,
+	Divider,
+	Transition,
+	Icon
+} from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
 const list = [
 	{
 		title: "LOOT",
-		demo: "Link to Demo",
-		github: "Link to Github",
+		demo: "https://github.com/gene-yoo/loot-demo",
+		frontend: "https://github.com/gene-yoo/loot-frontend",
+		backend: "https://github.com/gene-yoo/loot-backend-api-v1",
 		screenshot: "https://i.imgur.com/cYohnG9.png",
 		description:
-			'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+			"A cryptocurrency trading platform simulator built on React / Redux / Rails. Market prices are sourced every 30 seconds from the CryptoCompare API. Charts are built on Chart.js."
 	},
 	{
-		title: "Project Title 2",
-		demo: "Link to Demo",
-		github: "Link to Github",
-		screenshot: "https://i.imgur.com/cYohnG9.png",
+		title: "HEADLINES",
+		demo: "https://head-lines.herokuapp.com/welcome",
+		frontend: "https://github.com/gene-yoo/headlines-frontend",
+		backend: "https://github.com/gene-yoo/headlines-backend",
+		screenshot: "https://i.imgur.com/fI1Uz0y.jpg",
 		description:
-			'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+			"Personal news feed generator from 30 curated sources built on React / Rails. Users can aggregate their favorite news resources into one feed, save articles, and share articles with the Headlines network. All news headlines are sourced from the News API."
 	},
 	{
-		title: "Project Title 3",
-		demo: "Link to Demo",
-		github: "Link to Github",
-		screenshot: "https://i.imgur.com/cYohnG9.png",
+		title: "!PICTIONARY",
+		demo: "https://www.dropbox.com/s/9x59f1iceoa1kg2/pictionary-demo.mov?dl=0",
+		frontend: "https://github.com/gene-yoo/pictionary-frontend",
+		backend: "https://github.com/gene-yoo/pictionary-backend",
+		screenshot: "https://i.imgur.com/O6vRO2n.png",
 		description:
-			'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+			"Multiplayer Pictionary-based web application built on vanilla Javascript / Rails"
 	}
 ];
 
@@ -45,13 +55,40 @@ const Projects = props => {
 					{list.map(project => {
 						return (
 							<div
-								style={{ marginBottom: "25px", width: "725px" }}
+								style={{ margin: "30px", width: "725px" }}
 								key={project.title}
 							>
-								<div style={{ marginBottom: "25px" }}>
-									<Header as="h2">{project.title}</Header>
-									<span style={{ marginRight: "25px" }}>{project.demo}</span>
-									<span>{project.github}</span>
+								<div style={{ marginBottom: "30px" }}>
+									<div style={{ marginBottom: "10px" }}>
+										<div style={{ display: "inline-block" }}>
+											<Header as="h2">{project.title}</Header>
+										</div>
+										<div style={{ display: "inline-block", float: "right" }}>
+											{["Demo", "Frontend", "Backend"].map(repo => {
+												return (
+													<div
+														style={{
+															display: "inline-block",
+															margin: "0px 20px",
+															fontSize: "1.25em",
+															cursor: "pointer"
+														}}
+													>
+														<a
+															href={project[repo.toLowerCase()]}
+															target="_blank"
+														>
+															<Icon name={"github"} />
+															{repo}
+														</a>
+													</div>
+												);
+											})}
+										</div>
+									</div>
+									<div style={{ fontSize: "1.25em", lineHeight: "1.25" }}>
+										{project.description}
+									</div>
 									<div
 										style={{
 											width: "600px",
@@ -62,7 +99,7 @@ const Projects = props => {
 									>
 										<img
 											src={project.screenshot}
-											alt=""
+											alt={project.title}
 											style={{
 												height: "100%",
 												border: "2px solid #e3e8ef",
@@ -70,7 +107,6 @@ const Projects = props => {
 											}}
 										/>
 									</div>
-									<span>{project.description}</span>
 								</div>
 								<Divider />
 							</div>
