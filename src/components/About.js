@@ -26,6 +26,15 @@ const About = props => {
 					{
 						"Gene is a full stack web developer interested in demystifying technology so that companies can employ new ideas quickly and engage their customers in meaningful ways. With a background in Web Development and Strategy Consulting, Gene works effectively amongst both business and engineering teams to deliver tangible results."
 					}
+					<br />
+					<br />
+					{"All inquiries may be forwarded to: "}
+					<a
+						href="mailto:gene.y.yoo@gmail.com?Subject=General%20Inquiry"
+						target="_top"
+					>
+						gene.y.yoo@gmail.com
+					</a>
 				</span>
 			</div>
 		</Grid.Row>
