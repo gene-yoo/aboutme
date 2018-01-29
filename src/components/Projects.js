@@ -18,6 +18,14 @@ const list = [
 		screenshot: "https://i.imgur.com/cYohnG9.png",
 		description:
 			'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+	},
+	{
+		title: "Project Title 3",
+		demo: "Link to Demo",
+		github: "Link to Github",
+		screenshot: "https://i.imgur.com/cYohnG9.png",
+		description:
+			'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
 	}
 ];
 
@@ -32,12 +40,7 @@ const Projects = props => {
 			>
 				Back to Menu
 			</Button>
-			<div
-				style={{
-					overflowY: "scroll",
-					height: "750px"
-				}}
-			>
+			<div>
 				<Transition.Group animation={"fly left"} duration={2000}>
 					{list.map(project => {
 						return (

@@ -42,8 +42,14 @@ class Home extends Component {
 											style={{ minWidth: "400px", maxWidth: "400px" }}
 										>
 											<Grid.Row style={{ height: "100px" }} />
-											<Profile />
-											<Menu />
+											<div
+												style={{
+													position: "fixed"
+												}}
+											>
+												<Profile />
+												<Menu />
+											</div>
 										</Grid.Column>
 										<Grid.Column
 											style={{ minWidth: "800px", maxWidth: "800px" }}
@@ -69,10 +75,17 @@ class Home extends Component {
 								>
 									<Grid.Row columns={3}>
 										<Grid.Column
-											style={{ minWidth: "400px", maxWidth: "400px" }}
+											style={{
+												minWidth: "400px",
+												maxWidth: "400px"
+											}}
 										>
 											<Grid.Row style={{ height: "100px" }} />
-											<div>
+											<div
+												style={{
+													position: "fixed"
+												}}
+											>
 												<Profile />
 												<Menu />
 											</div>
