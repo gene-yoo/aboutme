@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { Grid, Header, Transition, Icon } from "semantic-ui-react";
+import { Grid, Transition, Icon } from "semantic-ui-react";
 
 class Menu extends Component {
 	constructor(props) {

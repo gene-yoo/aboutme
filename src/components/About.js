@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Grid, Transition, Image, Header } from "semantic-ui-react";
+import { Button, Grid, Transition } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
 const About = props => {
