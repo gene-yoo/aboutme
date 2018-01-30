@@ -114,7 +114,7 @@ class Home extends Component {
 							return (
 								<Transition
 									animation={"fade"}
-									duration={1750}
+									duration={1200}
 									transitionOnMount={true}
 								>
 									<Grid.Column style={{ minWidth: "400px", width: "25%" }}>

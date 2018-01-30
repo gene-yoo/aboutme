@@ -58,7 +58,7 @@ const Projects = props => {
 				duration={1200}
 				transitionOnMount={true}
 			>
-				<div>
+				<div style={{ marginTop: "50px" }}>
 					{list.map(project => {
 						return (
 							<div

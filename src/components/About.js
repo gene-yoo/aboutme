@@ -51,8 +51,9 @@ const About = props => {
 			>
 				<div
 					style={{
-						fontSize: "1.75em",
-						lineHeight: "1.5"
+						fontSize: "1.5em",
+						lineHeight: "1.5",
+						marginTop: "50px"
 					}}
 				>
 					<div style={{ marginBottom: "25px" }}>
