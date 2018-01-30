@@ -50,7 +50,7 @@ class Menu extends Component {
 			return (
 				<Transition
 					animation={"pulse"}
-					duration={500}
+					duration={300}
 					visible={this.state[item.name]}
 					key={item.name}
 				>

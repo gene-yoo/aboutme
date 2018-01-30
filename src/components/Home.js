@@ -22,6 +22,7 @@ class Home extends Component {
 
 	render() {
 		console.log("inside home, render");
+		console.log("state: ", this.state);
 		console.log("----------------------------");
 		return (
 			<Grid centered>
@@ -32,9 +33,8 @@ class Home extends Component {
 						render={() => {
 							return (
 								<Transition
-									animation={"fade"}
-									duration={1750}
-									visible={this.state.content}
+									animation={"fade up"}
+									duration={1000}
 									transitionOnMount={true}
 								>
 									<Grid.Row columns={3}>
@@ -68,9 +68,8 @@ class Home extends Component {
 						render={() => {
 							return (
 								<Transition
-									animation={"fade"}
-									duration={1750}
-									visible={this.state.content}
+									animation={"fade up"}
+									duration={1000}
 									transitionOnMount={true}
 								>
 									<Grid.Row columns={3}>
@@ -90,6 +89,7 @@ class Home extends Component {
 												<Menu />
 											</div>
 										</Grid.Column>
+
 										<Grid.Column
 											style={{
 												minWidth: "800px",
@@ -115,7 +115,6 @@ class Home extends Component {
 								<Transition
 									animation={"fade"}
 									duration={1750}
-									visible={this.state.content}
 									transitionOnMount={true}
 								>
 									<Grid.Column style={{ minWidth: "400px", width: "25%" }}>

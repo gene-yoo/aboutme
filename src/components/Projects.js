@@ -4,8 +4,8 @@ import {
 	Grid,
 	Header,
 	Divider,
-	Transition,
-	Icon
+	Icon,
+	Transition
 } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
@@ -40,6 +40,9 @@ const list = [
 ];
 
 const Projects = props => {
+	console.log("inside projects, render");
+	console.log("----------------------------");
+
 	return (
 		<Grid.Row>
 			<Button
@@ -50,8 +53,12 @@ const Projects = props => {
 			>
 				Back to Menu
 			</Button>
-			<div>
-				<Transition.Group animation={"fly left"} duration={2000}>
+			<Transition
+				animation={"fade up"}
+				duration={1200}
+				transitionOnMount={true}
+			>
+				<div>
 					{list.map(project => {
 						return (
 							<div
@@ -114,8 +121,8 @@ const Projects = props => {
 							</div>
 						);
 					})}
-				</Transition.Group>
-			</div>
+				</div>
+			</Transition>
 		</Grid.Row>
 	);
 };
