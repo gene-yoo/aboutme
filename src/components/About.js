@@ -26,6 +26,11 @@ const About = props => {
 			name: "Rails",
 			logo: "https://i.imgur.com/qWSbInD.png",
 			height: "50px"
+		},
+		{
+			name: "SQL",
+			logo: "https://i.imgur.com/vg62lBx.png",
+			height: "75px"
 		}
 	];
 
@@ -51,13 +56,16 @@ const About = props => {
 					}}
 				>
 					<div style={{ marginBottom: "25px" }}>
+						{"Gene Yoo is a full stack web developer based in Manhattan, NY."}
+					</div>
+					<div style={{ marginBottom: "25px" }}>
 						{
-							"Gene is a full stack web developer interested in demystifying technology so that companies can employ new ideas quickly and engage their customers in meaningful ways. With a background in Web Development and Strategy Consulting, Gene works effectively amongst both business and engineering teams to deliver tangible results."
+							"Gene's interests are rooted in demystifying technology so that companies can employ new ideas quickly and engage their customers in meaningful ways. With a background in Strategy Consulting and Web Development, he is able to work effectively across both business and engineering teams to deliver tangible results."
 						}
 					</div>
 					<div>{"Gene's technical proficiency includes:"}</div>
 					<div style={{ marginTop: "25px", marginBottom: "25px" }}>
-						<div>
+						<div style={{ position: "relative", left: "20px" }}>
 							<span style={{ fontSize: "0.75em", fontWeight: "bold" }}>
 								{"Frontend: "}
 							</span>
@@ -81,7 +89,7 @@ const About = props => {
 								);
 							})}
 						</div>
-						<div>
+						<div style={{ position: "relative", left: "20px" }}>
 							<span style={{ fontSize: "0.75em", fontWeight: "bold" }}>
 								{"Backend: "}
 							</span>
