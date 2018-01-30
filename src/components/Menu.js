@@ -122,16 +122,16 @@ class Menu extends Component {
 				link: "https://github.com/gene-yoo"
 			},
 			{
-				name: "instagram",
-				icon: "instagram",
-				type: "external",
-				link: "https://www.instagram.com/geneyoo/"
-			},
-			{
 				name: "linkedin",
 				icon: "linkedin",
 				type: "external",
 				link: "https://www.linkedin.com/in/geneyyoo/"
+			},
+			{
+				name: "instagram",
+				icon: "instagram",
+				type: "external",
+				link: "https://www.instagram.com/geneyoo/"
 			}
 		];
 

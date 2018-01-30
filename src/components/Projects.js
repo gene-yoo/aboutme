@@ -73,6 +73,7 @@ const Projects = props => {
 															fontSize: "1.25em",
 															cursor: "pointer"
 														}}
+														key={repo.toLowerCase()}
 													>
 														<a
 															href={project[repo.toLowerCase()]}
@@ -101,7 +102,8 @@ const Projects = props => {
 											src={project.screenshot}
 											alt={project.title}
 											style={{
-												height: "100%",
+												maxWidth: "100%",
+												maxHeight: "100%",
 												border: "2px solid #e3e8ef",
 												boxShadow: "5px 5px #e3e8ef"
 											}}
