@@ -53,6 +53,8 @@ const About = props => {
 					style={{
 						fontSize: "1.5em",
 						lineHeight: "1.5",
+						marginLeft: "30px",
+						marginRight: "30px",
 						marginTop: "50px"
 					}}
 				>
