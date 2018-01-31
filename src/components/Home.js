@@ -25,109 +25,89 @@ class Home extends Component {
 		console.log("state: ", this.state);
 		console.log("----------------------------");
 		return (
-			<Grid centered>
-				<Switch>
-					<Route
-						exact
-						path="/about"
-						render={() => {
-							return (
-								<Transition
-									animation={"fade up"}
-									duration={1000}
-									transitionOnMount={true}
-								>
-									<Grid.Row columns={3}>
-										<Grid.Column
-											style={{ minWidth: "400px", maxWidth: "400px" }}
-										>
-											<Grid.Row style={{ height: "100px" }} />
-											<div
-												style={{
-													position: "fixed"
-												}}
-											>
-												<Profile />
-												<Menu />
-											</div>
-										</Grid.Column>
-										<Grid.Column
-											style={{ minWidth: "800px", maxWidth: "800px" }}
-										>
-											<Grid.Row style={{ height: "100px" }} />
-											<About />
-										</Grid.Column>
-									</Grid.Row>
-								</Transition>
-							);
-						}}
-					/>
-					<Route
-						exact
-						path="/projects"
-						render={() => {
-							return (
-								<Transition
-									animation={"fade up"}
-									duration={1000}
-									transitionOnMount={true}
-								>
-									<Grid.Row columns={3}>
-										<Grid.Column
-											style={{
-												minWidth: "400px",
-												maxWidth: "400px"
-											}}
-										>
-											<Grid.Row style={{ height: "100px" }} />
-											<div
-												style={{
-													position: "fixed"
-												}}
-											>
-												<Profile />
-												<Menu />
-											</div>
-										</Grid.Column>
-
-										<Grid.Column
-											style={{
-												minWidth: "800px",
-												maxWidth: "800px"
-											}}
-										>
-											<Grid.Row style={{ height: "100px" }} />
-											<Projects />
-										</Grid.Column>
-									</Grid.Row>
-								</Transition>
-							);
-						}}
-					/>
-					<Route
-						exact
-						path="/"
-						render={() => {
-							console.log("inside switch /root, render");
-							console.log("----------------------------");
-
-							return (
-								<Transition
-									animation={"fade"}
-									duration={1200}
-									transitionOnMount={true}
-								>
-									<Grid.Column style={{ minWidth: "400px", width: "25%" }}>
+			<Switch>
+				<Route
+					exact
+					path="/about"
+					render={() => {
+						return (
+							<Transition
+								animation={"fade"}
+								duration={1000}
+								transitionOnMount={true}
+							>
+								<Grid container stackable columns={3}>
+									<Grid.Column style={{ width: "30%" }}>
 										<Grid.Row style={{ height: "100px" }} />
 										<Profile />
 										<Menu />
 									</Grid.Column>
-								</Transition>
-							);
-						}}
-					/>
-				</Switch>
-			</Grid>
+									<Grid.Column style={{ width: "70%" }}>
+										<Grid.Row style={{ height: "100px" }} />
+										<About />
+									</Grid.Column>
+								</Grid>
+							</Transition>
+						);
+					}}
+				/>
+				<Route
+					exact
+					path="/projects"
+					render={() => {
+						return (
+							<Transition
+								animation={"fade up"}
+								duration={1000}
+								transitionOnMount={true}
+							>
+								<Grid container stackable columns={3}>
+									<Grid.Column style={{ width: "30%" }}>
+										<Grid.Row style={{ height: "100px" }} />
+										<div
+											style={{
+												position: "fixed"
+											}}
+										>
+											<Profile />
+											<Menu />
+										</div>
+									</Grid.Column>
+
+									<Grid.Column style={{ width: "70%" }}>
+										<Grid.Row style={{ height: "100px" }} />
+										<Projects />
+									</Grid.Column>
+								</Grid>
+							</Transition>
+						);
+					}}
+				/>
+				<Route
+					exact
+					path="/"
+					render={() => {
+						console.log("inside switch /root, render");
+						console.log("----------------------------");
+
+						return (
+							<Transition
+								animation={"fade"}
+								duration={1200}
+								transitionOnMount={true}
+							>
+								<Grid container columns={2}>
+									<Grid.Column>
+										<Grid.Row style={{ height: "100px" }} />
+										<Profile />
+										<Menu />
+									</Grid.Column>
+								</Grid>
+							</Transition>
+						);
+					}}
+				/>
+			</Switch>
 		);
 	}
 }

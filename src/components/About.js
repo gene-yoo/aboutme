@@ -79,6 +79,7 @@ const About = props => {
 											display: "inline-block",
 											margin: "20px"
 										}}
+										key={skill.name}
 									>
 										<img
 											src={skill.logo}
@@ -103,6 +104,7 @@ const About = props => {
 											display: "inline-block",
 											margin: "20px"
 										}}
+										key={skill.name}
 									>
 										<img
 											src={skill.logo}
