@@ -38,3 +38,6 @@ Thumbs.db
 
 # Node Modules #
 node_modules/
+
+# Build folder
+build/
