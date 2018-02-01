@@ -55,7 +55,11 @@ class Home extends Component {
 										</div>
 									</Grid.Column>
 									<Grid.Column style={{ width: "70%" }}>
-										<Grid.Row style={{ height: "100px" }} />
+										<div
+											style={{
+												paddingTop: "50px"
+											}}
+										/>
 										<About />
 									</Grid.Column>
 								</Grid>
@@ -93,6 +97,11 @@ class Home extends Component {
 									</Grid.Column>
 
 									<Grid.Column style={{ width: "70%" }}>
+										<div
+											style={{
+												paddingTop: "50px"
+											}}
+										/>
 										<Projects />
 									</Grid.Column>
 								</Grid>
