@@ -36,11 +36,23 @@ class Home extends Component {
 								duration={1000}
 								transitionOnMount={true}
 							>
-								<Grid container stackable columns={3}>
+								<Grid
+									container
+									centered
+									stackable
+									columns={3}
+									padded={"vertically"}
+								>
 									<Grid.Column style={{ width: "30%" }}>
-										<Grid.Row style={{ height: "100px" }} />
-										<Profile />
-										<Menu />
+										<div
+											style={{
+												position: "fixed",
+												paddingTop: "50px"
+											}}
+										>
+											<Profile />
+											<Menu />
+										</div>
 									</Grid.Column>
 									<Grid.Column style={{ width: "70%" }}>
 										<Grid.Row style={{ height: "100px" }} />
@@ -61,12 +73,18 @@ class Home extends Component {
 								duration={1000}
 								transitionOnMount={true}
 							>
-								<Grid container stackable columns={3}>
+								<Grid
+									container
+									centered
+									stackable
+									columns={3}
+									padded={"vertically"}
+								>
 									<Grid.Column style={{ width: "30%" }}>
-										<Grid.Row style={{ height: "100px" }} />
 										<div
 											style={{
-												position: "fixed"
+												position: "fixed",
+												paddingTop: "50px"
 											}}
 										>
 											<Profile />
@@ -75,7 +93,6 @@ class Home extends Component {
 									</Grid.Column>
 
 									<Grid.Column style={{ width: "70%" }}>
-										<Grid.Row style={{ height: "100px" }} />
 										<Projects />
 									</Grid.Column>
 								</Grid>
@@ -96,9 +113,14 @@ class Home extends Component {
 								duration={1200}
 								transitionOnMount={true}
 							>
-								<Grid container columns={2}>
+								<Grid
+									centered
+									container
+									columns={2}
+									verticalAlign={"middle"}
+									padded="vertically"
+								>
 									<Grid.Column>
-										<Grid.Row style={{ height: "100px" }} />
 										<Profile />
 										<Menu />
 									</Grid.Column>
