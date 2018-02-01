@@ -35,12 +35,12 @@ const About = props => {
 	];
 
 	return (
-		<Grid.Row style={{ paddingTop: "50px" }}>
+		<Grid.Row style={{ marginTop: "2em" }}>
 			<Button
 				onClick={() => {
 					props.history.push("/");
 				}}
-				style={{ display: "block", marginBottom: "20px" }}
+				style={{ display: "block", marginBottom: "1em" }}
 			>
 				Back to Menu
 			</Button>
@@ -53,22 +53,22 @@ const About = props => {
 					style={{
 						fontSize: "1.5em",
 						lineHeight: "1.5",
-						marginLeft: "30px",
-						marginRight: "30px",
-						marginTop: "50px"
+						marginLeft: "1em",
+						marginRight: "1em",
+						marginTop: "2em"
 					}}
 				>
-					<div style={{ marginBottom: "25px" }}>
+					<div style={{ marginBottom: "1em" }}>
 						{"Gene Yoo is a full stack web developer based in Manhattan, NY."}
 					</div>
-					<div style={{ marginBottom: "25px" }}>
+					<div style={{ marginBottom: "1em" }}>
 						{
 							"Gene's interests are rooted in demystifying technology so that companies can employ new ideas quickly and engage their customers in meaningful ways. With a background in Strategy Consulting and Web Development, he is able to work effectively across both business and engineering teams to deliver tangible results."
 						}
 					</div>
 					<div>{"Gene's technical proficiency includes:"}</div>
-					<div style={{ marginTop: "25px", marginBottom: "25px" }}>
-						<div style={{ position: "relative", left: "20px" }}>
+					<div style={{ marginTop: "1em", marginBottom: "1em" }}>
+						<div style={{ position: "relative", left: "1em" }}>
 							<span style={{ fontSize: "0.75em", fontWeight: "bold" }}>
 								{"Frontend: "}
 							</span>
@@ -77,7 +77,7 @@ const About = props => {
 									<div
 										style={{
 											display: "inline-block",
-											margin: "20px"
+											margin: "1em"
 										}}
 										key={skill.name}
 									>
@@ -102,7 +102,7 @@ const About = props => {
 									<div
 										style={{
 											display: "inline-block",
-											margin: "20px"
+											margin: "1em"
 										}}
 										key={skill.name}
 									>

@@ -44,12 +44,12 @@ const Projects = props => {
 	console.log("----------------------------");
 
 	return (
-		<Grid.Row style={{ paddingTop: "50px" }}>
+		<Grid.Row style={{ marginTop: "2em" }}>
 			<Button
 				onClick={() => {
 					props.history.push("/");
 				}}
-				style={{ display: "block", marginBottom: "20px" }}
+				style={{ display: "block", marginBottom: "1em" }}
 			>
 				Back to Menu
 			</Button>
@@ -58,15 +58,19 @@ const Projects = props => {
 				duration={1200}
 				transitionOnMount={true}
 			>
-				<div style={{ marginTop: "50px" }}>
+				<div style={{ marginTop: "3em" }}>
 					{list.map(project => {
 						return (
 							<div
-								style={{ margin: "30px", width: "725px" }}
+								style={{
+									marginLeft: "1em",
+									marginRight: "1em",
+									marginTop: "2em"
+								}}
 								key={project.title}
 							>
-								<div style={{ marginBottom: "30px" }}>
-									<div style={{ marginBottom: "10px" }}>
+								<div>
+									<div style={{ marginBottom: "1em" }}>
 										<div style={{ display: "inline-block" }}>
 											<Header as="h2">{project.title}</Header>
 										</div>
@@ -76,7 +80,7 @@ const Projects = props => {
 													<div
 														style={{
 															display: "inline-block",
-															margin: "0px 20px",
+															margin: "0em 1em",
 															fontSize: "1.25em",
 															cursor: "pointer"
 														}}
@@ -94,14 +98,20 @@ const Projects = props => {
 											})}
 										</div>
 									</div>
-									<div style={{ fontSize: "1.25em", lineHeight: "1.25" }}>
-										{project.description}
-									</div>
+
 									<div
 										style={{
-											width: "600px",
-											height: "350px",
-											margin: "15px",
+											fontSize: "1.25em",
+											lineHeight: "1.25"
+										}}
+									>
+										{project.description}
+									</div>
+
+									<div
+										style={{
+											width: "75%",
+											margin: "1em",
 											textAlign: "center"
 										}}
 									>
@@ -117,7 +127,9 @@ const Projects = props => {
 										/>
 									</div>
 								</div>
-								<Divider />
+								<div style={{ marginTop: "2em", marginBottom: "2em" }}>
+									<Divider />
+								</div>
 							</div>
 						);
 					})}

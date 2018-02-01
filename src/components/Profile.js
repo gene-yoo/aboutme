@@ -6,7 +6,7 @@ const Profile = props => {
 	console.log("----------------------------");
 
 	return (
-		<Grid.Row style={{ height: "275px", marginBottom: "10px" }}>
+		<Grid.Row style={{ marginTop: "2em", marginBottom: "1em" }}>
 			<Image src="https://i.imgur.com/kzNKPA8.jpg" size="small" circular />
 			<Header as="h2" style={{ fontSize: "3em" }}>
 				{"gene yoo"}

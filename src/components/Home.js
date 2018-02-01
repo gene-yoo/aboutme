@@ -46,8 +46,7 @@ class Home extends Component {
 									<Grid.Column style={{ width: "30%" }}>
 										<div
 											style={{
-												position: "fixed",
-												paddingTop: "50px"
+												position: "fixed"
 											}}
 										>
 											<Profile />
@@ -82,8 +81,7 @@ class Home extends Component {
 									<Grid.Column style={{ width: "30%" }}>
 										<div
 											style={{
-												position: "fixed",
-												paddingTop: "50px"
+												position: "fixed"
 											}}
 										>
 											<Profile />
@@ -119,7 +117,7 @@ class Home extends Component {
 									verticalAlign={"middle"}
 									padded="vertically"
 								>
-									<Grid.Column>
+									<Grid.Column style={{ width: "30%" }}>
 										<Profile />
 										<Menu />
 									</Grid.Column>

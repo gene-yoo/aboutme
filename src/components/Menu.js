@@ -54,7 +54,7 @@ class Menu extends Component {
 					visible={this.state[item.name]}
 					key={item.name}
 				>
-					<Grid.Row style={{ height: "100px" }}>
+					<Grid.Row style={{ paddingTop: "2em" }}>
 						<div
 							style={{
 								fontSize: "3em"
