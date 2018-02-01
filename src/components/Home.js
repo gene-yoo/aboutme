@@ -55,7 +55,7 @@ class Home extends Component {
 							<Transition
 								animation={"fade"}
 								duration={1000}
-								transitionOnMount={true}
+								visibility={this.state.content}
 							>
 								{this.state.mobile ? (
 									<Grid
@@ -104,7 +104,7 @@ class Home extends Component {
 							<Transition
 								animation={"fade up"}
 								duration={1000}
-								transitionOnMount={true}
+								visibility={this.state.content}
 							>
 								{this.state.mobile ? (
 									<Grid
