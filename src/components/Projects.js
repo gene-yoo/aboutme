@@ -44,7 +44,7 @@ const Projects = props => {
 	console.log("----------------------------");
 
 	return (
-		<Grid.Row>
+		<Grid.Row style={{ paddingTop: "50px" }}>
 			<Button
 				onClick={() => {
 					props.history.push("/");
