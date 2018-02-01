@@ -11,14 +11,35 @@ class Home extends Component {
 		super(props);
 
 		this.state = {
-			content: true
+			content: true,
+			mobile: false
 		};
 	}
 
 	componentDidMount() {
 		console.log("inside home, comp did mount");
 		console.log("----------------------------");
+		this.checkMobileDisplay();
+		window.addEventListener("resize", this.checkMobileDisplay);
 	}
+
+	componentWillUnmount() {
+		console.log("inside home, comp will unmount");
+		console.log("----------------------------");
+		window.removeEventListener("resize", this.checkMobileDisplay);
+	}
+
+	checkMobileDisplay = () => {
+		console.log("inside home, check mobile display");
+		console.log("state: ", this.state);
+		console.log("----------------------------");
+
+		if (window.innerWidth <= 800) {
+			this.setState({ mobile: true });
+		} else {
+			this.setState({ mobile: false });
+		}
+	};
 
 	render() {
 		console.log("inside home, render");
@@ -36,27 +57,41 @@ class Home extends Component {
 								duration={1000}
 								transitionOnMount={true}
 							>
-								<Grid
-									container
-									centered
-									stackable
-									columns={3}
-									padded={"vertically"}
-								>
-									<Grid.Column style={{ width: "30%" }}>
-										<div
-											style={{
-												position: "fixed"
-											}}
-										>
-											<Profile />
-											<Menu />
-										</div>
-									</Grid.Column>
-									<Grid.Column style={{ width: "70%" }}>
-										<About />
-									</Grid.Column>
-								</Grid>
+								{this.state.mobile ? (
+									<Grid
+										container
+										centered
+										stackable
+										columns={2}
+										padded={"vertically"}
+									>
+										<Grid.Column style={{ width: "100%" }}>
+											<About />
+										</Grid.Column>
+									</Grid>
+								) : (
+									<Grid
+										container
+										centered
+										stackable
+										columns={3}
+										padded={"vertically"}
+									>
+										<Grid.Column style={{ width: "30%" }}>
+											<div
+												style={{
+													position: "fixed"
+												}}
+											>
+												<Profile />
+												<Menu />
+											</div>
+										</Grid.Column>
+										<Grid.Column style={{ width: "70%" }}>
+											<About />
+										</Grid.Column>
+									</Grid>
+								)}
 							</Transition>
 						);
 					}}
@@ -71,28 +106,42 @@ class Home extends Component {
 								duration={1000}
 								transitionOnMount={true}
 							>
-								<Grid
-									container
-									centered
-									stackable
-									columns={3}
-									padded={"vertically"}
-								>
-									<Grid.Column style={{ width: "30%" }}>
-										<div
-											style={{
-												position: "fixed"
-											}}
-										>
-											<Profile />
-											<Menu />
-										</div>
-									</Grid.Column>
+								{this.state.mobile ? (
+									<Grid
+										container
+										centered
+										stackable
+										columns={3}
+										padded={"vertically"}
+									>
+										<Grid.Column style={{ width: "100%" }}>
+											<Projects />
+										</Grid.Column>
+									</Grid>
+								) : (
+									<Grid
+										container
+										centered
+										stackable
+										columns={3}
+										padded={"vertically"}
+									>
+										<Grid.Column style={{ width: "30%" }}>
+											<div
+												style={{
+													position: "fixed"
+												}}
+											>
+												<Profile />
+												<Menu />
+											</div>
+										</Grid.Column>
 
-									<Grid.Column style={{ width: "70%" }}>
-										<Projects />
-									</Grid.Column>
-								</Grid>
+										<Grid.Column style={{ width: "70%" }}>
+											<Projects />
+										</Grid.Column>
+									</Grid>
+								)}
 							</Transition>
 						);
 					}}
@@ -108,7 +157,7 @@ class Home extends Component {
 							<Transition
 								animation={"fade"}
 								duration={1200}
-								transitionOnMount={true}
+								visibility={this.state.content}
 							>
 								<Grid
 									centered
@@ -117,10 +166,17 @@ class Home extends Component {
 									verticalAlign={"middle"}
 									padded="vertically"
 								>
-									<Grid.Column style={{ width: "30%" }}>
-										<Profile />
-										<Menu />
-									</Grid.Column>
+									{this.state.mobile ? (
+										<Grid.Column style={{ width: "100%" }}>
+											<Profile />
+											<Menu />
+										</Grid.Column>
+									) : (
+										<Grid.Column style={{ width: "30%" }}>
+											<Profile />
+											<Menu />
+										</Grid.Column>
+									)}
 								</Grid>
 							</Transition>
 						);
