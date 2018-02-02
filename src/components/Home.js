@@ -51,48 +51,40 @@ class Home extends Component {
 					exact
 					path="/about"
 					render={() => {
-						return (
-							<Transition
-								animation={"fade"}
-								duration={1000}
-								visibility={this.state.content}
+						return this.state.mobile ? (
+							<Grid
+								container
+								centered
+								stackable
+								columns={2}
+								padded={"vertically"}
 							>
-								{this.state.mobile ? (
-									<Grid
-										container
-										centered
-										stackable
-										columns={2}
-										padded={"vertically"}
+								<Grid.Column style={{ width: "100%" }}>
+									<About />
+								</Grid.Column>
+							</Grid>
+						) : (
+							<Grid
+								container
+								centered
+								stackable
+								columns={3}
+								padded={"vertically"}
+							>
+								<Grid.Column style={{ width: "30%" }}>
+									<div
+										style={{
+											position: "fixed"
+										}}
 									>
-										<Grid.Column style={{ width: "100%" }}>
-											<About />
-										</Grid.Column>
-									</Grid>
-								) : (
-									<Grid
-										container
-										centered
-										stackable
-										columns={3}
-										padded={"vertically"}
-									>
-										<Grid.Column style={{ width: "30%" }}>
-											<div
-												style={{
-													position: "fixed"
-												}}
-											>
-												<Profile fontSize={"3em"} />
-												<Menu fontSize={"3em"} />
-											</div>
-										</Grid.Column>
-										<Grid.Column style={{ width: "70%" }}>
-											<About />
-										</Grid.Column>
-									</Grid>
-								)}
-							</Transition>
+										<Profile fontSize={"3em"} />
+										<Menu fontSize={"3em"} />
+									</div>
+								</Grid.Column>
+								<Grid.Column style={{ width: "70%" }}>
+									<About />
+								</Grid.Column>
+							</Grid>
 						);
 					}}
 				/>
@@ -100,49 +92,41 @@ class Home extends Component {
 					exact
 					path="/projects"
 					render={() => {
-						return (
-							<Transition
-								animation={"fade up"}
-								duration={1000}
-								visibility={this.state.content}
+						return this.state.mobile ? (
+							<Grid
+								container
+								centered
+								stackable
+								columns={3}
+								padded={"vertically"}
 							>
-								{this.state.mobile ? (
-									<Grid
-										container
-										centered
-										stackable
-										columns={3}
-										padded={"vertically"}
+								<Grid.Column style={{ width: "100%" }}>
+									<Projects />
+								</Grid.Column>
+							</Grid>
+						) : (
+							<Grid
+								container
+								centered
+								stackable
+								columns={3}
+								padded={"vertically"}
+							>
+								<Grid.Column style={{ width: "30%" }}>
+									<div
+										style={{
+											position: "fixed"
+										}}
 									>
-										<Grid.Column style={{ width: "100%" }}>
-											<Projects />
-										</Grid.Column>
-									</Grid>
-								) : (
-									<Grid
-										container
-										centered
-										stackable
-										columns={3}
-										padded={"vertically"}
-									>
-										<Grid.Column style={{ width: "30%" }}>
-											<div
-												style={{
-													position: "fixed"
-												}}
-											>
-												<Profile fontSize={"3em"} />
-												<Menu fontSize={"3em"} />
-											</div>
-										</Grid.Column>
+										<Profile fontSize={"3em"} />
+										<Menu fontSize={"3em"} />
+									</div>
+								</Grid.Column>
 
-										<Grid.Column style={{ width: "70%" }}>
-											<Projects />
-										</Grid.Column>
-									</Grid>
-								)}
-							</Transition>
+								<Grid.Column style={{ width: "70%" }}>
+									<Projects />
+								</Grid.Column>
+							</Grid>
 						);
 					}}
 				/>
@@ -154,31 +138,25 @@ class Home extends Component {
 						console.log("----------------------------");
 
 						return (
-							<Transition
-								animation={"fade"}
-								duration={1200}
-								visibility={this.state.content}
+							<Grid
+								centered
+								container
+								columns={2}
+								verticalAlign={"middle"}
+								padded="vertically"
 							>
-								<Grid
-									centered
-									container
-									columns={2}
-									verticalAlign={"middle"}
-									padded="vertically"
-								>
-									{this.state.mobile ? (
-										<Grid.Column style={{ width: "85%" }}>
-											<Profile fontSize={"2em"} />
-											<Menu fontSize={"2em"} />
-										</Grid.Column>
-									) : (
-										<Grid.Column style={{ width: "30%" }}>
-											<Profile fontSize={"3em"} />
-											<Menu fontSize={"3em"} />
-										</Grid.Column>
-									)}
-								</Grid>
-							</Transition>
+								{this.state.mobile ? (
+									<Grid.Column style={{ width: "85%" }}>
+										<Profile fontSize={"2em"} />
+										<Menu fontSize={"2em"} />
+									</Grid.Column>
+								) : (
+									<Grid.Column style={{ width: "30%" }}>
+										<Profile fontSize={"3em"} />
+										<Menu fontSize={"3em"} />
+									</Grid.Column>
+								)}
+							</Grid>
 						);
 					}}
 				/>

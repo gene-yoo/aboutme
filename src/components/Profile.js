@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Image, Header } from "semantic-ui-react";
+import { Grid, Image, Header, Transition } from "semantic-ui-react";
 
 const Profile = props => {
 	console.log("inside profile, render");
