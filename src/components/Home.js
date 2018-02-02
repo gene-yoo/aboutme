@@ -167,7 +167,7 @@ class Home extends Component {
 									padded="vertically"
 								>
 									{this.state.mobile ? (
-										<Grid.Column style={{ width: "100%" }}>
+										<Grid.Column style={{ width: "85%" }}>
 											<Profile fontSize={"2em"} />
 											<Menu fontSize={"2em"} />
 										</Grid.Column>

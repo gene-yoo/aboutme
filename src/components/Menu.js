@@ -128,6 +128,12 @@ class Menu extends Component {
 				link: "https://www.linkedin.com/in/geneyyoo/"
 			},
 			{
+				name: "medium",
+				icon: "medium",
+				type: "external",
+				link: "https://medium.com/@gene.y.yoo"
+			},
+			{
 				name: "instagram",
 				icon: "instagram",
 				type: "external",
