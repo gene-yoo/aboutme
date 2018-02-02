@@ -9,7 +9,7 @@ const Profile = props => {
 		<Grid.Row style={{ marginBottom: "1.5em", textAlign: "center" }}>
 			<Image
 				src="https://i.imgur.com/kzNKPA8.jpg"
-				style={{ minWidth: "15%", maxWidth: "20%", width: "18%" }}
+				style={{ minWidth: "15%", width: "20%" }}
 				circular
 				centered
 			/>
