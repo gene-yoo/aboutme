@@ -83,8 +83,8 @@ class Home extends Component {
 													position: "fixed"
 												}}
 											>
-												<Profile />
-												<Menu />
+												<Profile fontSize={"3em"} />
+												<Menu fontSize={"3em"} />
 											</div>
 										</Grid.Column>
 										<Grid.Column style={{ width: "70%" }}>
@@ -132,8 +132,8 @@ class Home extends Component {
 													position: "fixed"
 												}}
 											>
-												<Profile />
-												<Menu />
+												<Profile fontSize={"3em"} />
+												<Menu fontSize={"3em"} />
 											</div>
 										</Grid.Column>
 
@@ -168,13 +168,13 @@ class Home extends Component {
 								>
 									{this.state.mobile ? (
 										<Grid.Column style={{ width: "100%" }}>
-											<Profile />
-											<Menu />
+											<Profile fontSize={"2em"} />
+											<Menu fontSize={"2em"} />
 										</Grid.Column>
 									) : (
 										<Grid.Column style={{ width: "30%" }}>
-											<Profile />
-											<Menu />
+											<Profile fontSize={"3em"} />
+											<Menu fontSize={"3em"} />
 										</Grid.Column>
 									)}
 								</Grid>

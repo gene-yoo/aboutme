@@ -57,7 +57,7 @@ class Menu extends Component {
 					<Grid.Row style={{ paddingTop: "2em" }}>
 						<div
 							style={{
-								fontSize: "3em"
+								fontSize: this.props.fontSize
 							}}
 							className="menuItem"
 							onClick={

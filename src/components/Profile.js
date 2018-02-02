@@ -8,7 +8,7 @@ const Profile = props => {
 	return (
 		<Grid.Row style={{ marginTop: "2em", marginBottom: "1em" }}>
 			<Image src="https://i.imgur.com/kzNKPA8.jpg" size="small" circular />
-			<Header as="h2" style={{ fontSize: "3em" }}>
+			<Header as="h2" style={{ fontSize: props.fontSize }}>
 				{"gene yoo"}
 			</Header>
 		</Grid.Row>

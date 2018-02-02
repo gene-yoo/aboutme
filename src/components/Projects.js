@@ -58,14 +58,12 @@ const Projects = props => {
 				duration={1200}
 				transitionOnMount={true}
 			>
-				<div style={{ marginTop: "3em" }}>
+				<div style={{ marginTop: "3em", fontSize: "1em" }}>
 					{list.map(project => {
 						return (
 							<div
 								style={{
-									marginLeft: "1em",
-									marginRight: "1em",
-									marginTop: "2em"
+									margin: "2em 1em"
 								}}
 								key={project.title}
 							>
@@ -80,7 +78,7 @@ const Projects = props => {
 													<div
 														style={{
 															display: "inline-block",
-															margin: "0em 1em",
+															margin: "0.5em",
 															fontSize: "1.25em",
 															cursor: "pointer"
 														}}
@@ -110,8 +108,7 @@ const Projects = props => {
 
 									<div
 										style={{
-											width: "75%",
-											margin: "1em",
+											margin: "1.5em 1em",
 											textAlign: "center"
 										}}
 									>
@@ -119,8 +116,8 @@ const Projects = props => {
 											src={project.screenshot}
 											alt={project.title}
 											style={{
-												maxWidth: "100%",
-												maxHeight: "100%",
+												maxWidth: "85%",
+												maxHeight: "85%",
 												border: "2px solid #e3e8ef",
 												boxShadow: "5px 5px #e3e8ef"
 											}}
