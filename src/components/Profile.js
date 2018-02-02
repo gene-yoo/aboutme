@@ -6,18 +6,22 @@ const Profile = props => {
 	console.log("----------------------------");
 
 	return (
-		<Grid.Row
-			style={{ marginTop: "2em", marginBottom: "1em", textAlign: "center" }}
-		>
+		<Grid.Row style={{ marginBottom: "1.5em", textAlign: "center" }}>
 			<Image
 				src="https://i.imgur.com/kzNKPA8.jpg"
-				size="small"
+				style={{ minWidth: "15%", maxWidth: "20%", width: "18%" }}
 				circular
 				centered
 			/>
-			<Header as="h2" style={{ fontSize: props.fontSize }}>
+			<div
+				style={{
+					margin: "0.5em",
+					fontSize: props.fontSize,
+					fontWeight: "bold"
+				}}
+			>
 				{"gene yoo"}
-			</Header>
+			</div>
 		</Grid.Row>
 	);
 };

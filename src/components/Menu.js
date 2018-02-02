@@ -54,7 +54,7 @@ class Menu extends Component {
 					visible={this.state[item.name]}
 					key={item.name}
 				>
-					<Grid.Row style={{ paddingTop: "2em" }}>
+					<div style={{ paddingTop: "2em" }}>
 						<div
 							style={{
 								fontSize: this.props.fontSize
@@ -100,7 +100,7 @@ class Menu extends Component {
 								{item.name + "."}
 							</div>
 						</div>
-					</Grid.Row>
+					</div>
 				</Transition>
 			);
 		});
@@ -141,7 +141,13 @@ class Menu extends Component {
 			}
 		];
 
-		return <Grid.Row>{this.renderItems(items)}</Grid.Row>;
+		return (
+			<Grid.Row style={{ textAlign: "center" }}>
+				<div style={{ display: "inline-block", textAlign: "left" }}>
+					{this.renderItems(items)}
+				</div>
+			</Grid.Row>
+		);
 	}
 }
 

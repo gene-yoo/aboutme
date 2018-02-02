@@ -140,10 +140,10 @@ class Home extends Component {
 						return (
 							<Grid
 								centered
-								container
 								columns={2}
 								verticalAlign={"middle"}
 								padded="vertically"
+								style={{ height: "100%", minHeight: "100%" }}
 							>
 								{this.state.mobile ? (
 									<Grid.Column style={{ width: "85%" }}>
@@ -151,9 +151,11 @@ class Home extends Component {
 										<Menu fontSize={"2em"} />
 									</Grid.Column>
 								) : (
-									<Grid.Column style={{ width: "30%" }}>
-										<Profile fontSize={"3em"} />
-										<Menu fontSize={"3em"} />
+									<Grid.Column style={{ height: "100%" }}>
+										<Grid.Row style={{ height: "100%" }}>
+											<Profile fontSize={"3em"} />
+											<Menu fontSize={"3em"} />
+										</Grid.Row>
 									</Grid.Column>
 								)}
 							</Grid>
