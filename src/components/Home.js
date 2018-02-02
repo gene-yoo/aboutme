@@ -73,7 +73,7 @@ class Home extends Component {
 							>
 								<Grid.Column style={{ width: "30%" }}>
 									<div>
-										<Profile fontSize={"3em"} />
+										<Profile fontSize={"3em"} mobile={this.state.mobile} />
 										<Menu fontSize={"3em"} />
 									</div>
 								</Grid.Column>
@@ -110,7 +110,7 @@ class Home extends Component {
 							>
 								<Grid.Column style={{ width: "30%" }}>
 									<div>
-										<Profile fontSize={"3em"} />
+										<Profile fontSize={"3em"} mobile={this.state.mobile} />
 										<Menu fontSize={"3em"} />
 									</div>
 								</Grid.Column>
@@ -137,14 +137,14 @@ class Home extends Component {
 								padded="vertically"
 							>
 								{this.state.mobile ? (
-									<Grid.Column style={{ width: "85%" }}>
-										<Profile fontSize={"2em"} />
+									<Grid.Column style={{ width: "100%" }}>
+										<Profile fontSize={"2em"} mobile={this.state.mobile} />
 										<Menu fontSize={"2em"} />
 									</Grid.Column>
 								) : (
 									<Grid.Column>
 										<Grid.Row>
-											<Profile fontSize={"3em"} />
+											<Profile fontSize={"3em"} mobile={this.state.mobile} />
 											<Menu fontSize={"3em"} />
 										</Grid.Row>
 									</Grid.Column>
