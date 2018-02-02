@@ -35,7 +35,7 @@ const About = props => {
 	];
 
 	return (
-		<Grid.Row style={{ marginTop: "2em" }}>
+		<Grid.Row>
 			<Button
 				onClick={() => {
 					props.history.push("/");

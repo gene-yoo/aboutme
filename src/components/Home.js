@@ -72,11 +72,7 @@ class Home extends Component {
 								padded={"vertically"}
 							>
 								<Grid.Column style={{ width: "30%" }}>
-									<div
-										style={{
-											position: "fixed"
-										}}
-									>
+									<div>
 										<Profile fontSize={"3em"} />
 										<Menu fontSize={"3em"} />
 									</div>
@@ -113,11 +109,7 @@ class Home extends Component {
 								padded={"vertically"}
 							>
 								<Grid.Column style={{ width: "30%" }}>
-									<div
-										style={{
-											position: "fixed"
-										}}
-									>
+									<div>
 										<Profile fontSize={"3em"} />
 										<Menu fontSize={"3em"} />
 									</div>
