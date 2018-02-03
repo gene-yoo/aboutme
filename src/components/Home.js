@@ -57,7 +57,7 @@ class Home extends Component {
 								centered
 								stackable
 								columns={2}
-								padded={"vertically"}
+								style={{ marginTop: "5%" }}
 							>
 								<Grid.Column style={{ width: "100%" }}>
 									<About />
@@ -69,7 +69,7 @@ class Home extends Component {
 								centered
 								stackable
 								columns={3}
-								padded={"vertically"}
+								style={{ marginTop: "5%" }}
 							>
 								<Grid.Column style={{ width: "30%" }}>
 									<div>
@@ -94,7 +94,7 @@ class Home extends Component {
 								centered
 								stackable
 								columns={3}
-								padded={"vertically"}
+								style={{ marginTop: "5%" }}
 							>
 								<Grid.Column style={{ width: "100%" }}>
 									<Projects />
@@ -106,7 +106,7 @@ class Home extends Component {
 								centered
 								stackable
 								columns={3}
-								padded={"vertically"}
+								style={{ marginTop: "5%" }}
 							>
 								<Grid.Column style={{ width: "30%" }}>
 									<div>
@@ -134,7 +134,7 @@ class Home extends Component {
 								centered
 								columns={2}
 								verticalAlign={"middle"}
-								padded="vertically"
+								style={{ marginTop: "5%" }}
 							>
 								{this.state.mobile ? (
 									<Grid.Column style={{ width: "100%" }}>
