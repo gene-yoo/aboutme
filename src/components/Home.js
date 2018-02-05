@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Transition } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import { withRouter, Switch, Route } from "react-router-dom";
 import Profile from "./Profile";
 import Menu from "./Menu";
@@ -57,7 +57,7 @@ class Home extends Component {
 								centered
 								stackable
 								columns={2}
-								style={{ marginTop: this.state.mobile ? "1%" : "5%" }}
+								style={{ marginTop: "2%" }}
 							>
 								<Grid.Column style={{ width: "100%" }}>
 									<About />
@@ -69,7 +69,7 @@ class Home extends Component {
 								centered
 								stackable
 								columns={3}
-								style={{ marginTop: this.state.mobile ? "1%" : "5%" }}
+								style={{ marginTop: "2%" }}
 							>
 								<Grid.Column style={{ width: "30%" }}>
 									<div>
@@ -94,7 +94,7 @@ class Home extends Component {
 								centered
 								stackable
 								columns={3}
-								style={{ marginTop: this.state.mobile ? "1%" : "5%" }}
+								style={{ marginTop: "2%" }}
 							>
 								<Grid.Column style={{ width: "100%" }}>
 									<Projects />
@@ -106,7 +106,7 @@ class Home extends Component {
 								centered
 								stackable
 								columns={3}
-								style={{ marginTop: this.state.mobile ? "1%" : "5%" }}
+								style={{ marginTop: "2%" }}
 							>
 								<Grid.Column style={{ width: "30%" }}>
 									<div>
@@ -134,7 +134,7 @@ class Home extends Component {
 								centered
 								columns={2}
 								verticalAlign={"middle"}
-								style={{ marginTop: this.state.mobile ? "1%" : "5%" }}
+								style={{ marginTop: "2%" }}
 							>
 								{this.state.mobile ? (
 									<Grid.Column style={{ width: "100%" }}>

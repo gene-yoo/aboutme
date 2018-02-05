@@ -63,7 +63,7 @@ const Projects = props => {
 						return (
 							<div
 								style={{
-									margin: "2em 1em"
+									margin: "2em 1.5em"
 								}}
 								key={project.title}
 							>
