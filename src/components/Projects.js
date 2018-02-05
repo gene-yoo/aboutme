@@ -76,7 +76,8 @@ const Projects = props => {
 									>
 										<div
 											style={{
-												display: "block"
+												display: "block",
+												marginBottom: "1em"
 											}}
 										>
 											<Header as="h2">{project.title}</Header>
