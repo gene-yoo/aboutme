@@ -60,7 +60,7 @@ class Home extends Component {
 								style={{ marginTop: "2%" }}
 							>
 								<Grid.Column style={{ width: "100%" }}>
-									<About />
+									<About mobile={this.state.mobile} />
 								</Grid.Column>
 							</Grid>
 						) : (
@@ -78,7 +78,7 @@ class Home extends Component {
 									</div>
 								</Grid.Column>
 								<Grid.Column style={{ width: "70%" }}>
-									<About />
+									<About mobile={this.state.mobile} />
 								</Grid.Column>
 							</Grid>
 						);
@@ -97,7 +97,7 @@ class Home extends Component {
 								style={{ marginTop: "2%" }}
 							>
 								<Grid.Column style={{ width: "100%" }}>
-									<Projects />
+									<Projects mobile={this.state.mobile} />
 								</Grid.Column>
 							</Grid>
 						) : (
@@ -116,7 +116,7 @@ class Home extends Component {
 								</Grid.Column>
 
 								<Grid.Column style={{ width: "70%" }}>
-									<Projects />
+									<Projects mobile={this.state.mobile} />
 								</Grid.Column>
 							</Grid>
 						);

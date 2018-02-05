@@ -76,7 +76,7 @@ const About = props => {
 								return (
 									<div
 										style={{
-											display: "inline-block",
+											display: props.mobile ? "block" : "inline-block",
 											margin: "1em"
 										}}
 										key={skill.name}
@@ -101,7 +101,7 @@ const About = props => {
 								return (
 									<div
 										style={{
-											display: "inline-block",
+											display: props.mobile ? "block" : "inline-block",
 											margin: "1em"
 										}}
 										key={skill.name}

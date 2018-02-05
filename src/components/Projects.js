@@ -68,19 +68,35 @@ const Projects = props => {
 								key={project.title}
 							>
 								<div>
-									<div style={{ marginBottom: "1em" }}>
-										<div style={{ display: "inline-block" }}>
+									<div
+										style={{
+											display: "block",
+											marginBottom: "1em"
+										}}
+									>
+										<div
+											style={{
+												display: "block"
+											}}
+										>
 											<Header as="h2">{project.title}</Header>
 										</div>
-										<div style={{ display: "inline-block", float: "right" }}>
+
+										<div
+											style={{
+												display: "block",
+												marginBottom: "1em"
+											}}
+										>
 											{["Demo", "Frontend", "Backend"].map(repo => {
 												return (
 													<div
 														style={{
 															display: "inline-block",
-															margin: "0.5em",
+															marginRight: "0.5em",
 															fontSize: "1.25em",
-															cursor: "pointer"
+															cursor: "pointer",
+															verticalAlign: "middle"
 														}}
 														key={repo.toLowerCase()}
 													>
@@ -96,11 +112,11 @@ const Projects = props => {
 											})}
 										</div>
 									</div>
-
 									<div
 										style={{
 											fontSize: "1.25em",
-											lineHeight: "1.25"
+											lineHeight: "1.25",
+											display: "block"
 										}}
 									>
 										{project.description}
