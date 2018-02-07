@@ -46,106 +46,85 @@ class Home extends Component {
 		console.log("state: ", this.state);
 		console.log("----------------------------");
 		return (
-			<Switch>
-				<Route
-					exact
-					path="/about"
-					render={() => {
-						return (
-							<Grid
-								container
-								centered
-								stackable
-								columns={2}
-								style={{ marginTop: "2%" }}
-							>
-								{this.state.mobile ? (
-									<Grid.Column style={{ width: "100%" }}>
-										<About mobile={this.state.mobile} />
-									</Grid.Column>
-								) : (
-									<Grid.Row>
-										<Grid.Column style={{ width: "30%" }}>
-											<div>
-												<Profile fontSize={"3em"} mobile={this.state.mobile} />
-												<Menu fontSize={"3em"} />
-											</div>
-										</Grid.Column>
-										<Grid.Column style={{ width: "70%" }}>
-											<About mobile={this.state.mobile} />
-										</Grid.Column>
-									</Grid.Row>
-								)}
-							</Grid>
-						);
-					}}
-				/>
-				<Route
-					exact
-					path="/projects"
-					render={() => {
-						return (
-							<Grid
-								container
-								centered
-								stackable
-								columns={2}
-								style={{ marginTop: "2%" }}
-							>
-								{this.state.mobile ? (
-									<Grid.Column style={{ width: "100%" }}>
-										<Projects mobile={this.state.mobile} />
-									</Grid.Column>
-								) : (
-									<Grid.Row>
-										<Grid.Column style={{ width: "30%" }}>
-											<div>
-												<Profile fontSize={"3em"} mobile={this.state.mobile} />
-												<Menu fontSize={"3em"} />
-											</div>
-										</Grid.Column>
-
-										<Grid.Column style={{ width: "70%" }}>
-											<Projects mobile={this.state.mobile} />
-										</Grid.Column>
-									</Grid.Row>
-								)}
-							</Grid>
-						);
-					}}
-				/>
-				<Route
-					exact
-					path="/"
-					render={() => {
-						console.log("inside switch /root, render");
-						console.log("----------------------------");
-
-						return (
-							<Grid
-								centered
-								columns={2}
-								verticalAlign={"middle"}
-								style={{ marginTop: "2%" }}
-							>
-								{this.state.mobile ? (
-									<Grid.Column style={{ width: "100%" }}>
-										<Profile fontSize={"2em"} mobile={this.state.mobile} />
-										<Menu fontSize={"2em"} />
-									</Grid.Column>
-								) : (
-									<Grid.Column>
-										<Grid.Row>
+			<Grid
+				container
+				centered
+				stackable
+				columns={2}
+				style={{ marginTop: "2%" }}
+			>
+				<Switch>
+					<Route
+						exact
+						path="/about"
+						render={() => {
+							return this.state.mobile ? (
+								<Grid.Column style={{ width: "100%" }}>
+									<About mobile={this.state.mobile} />
+								</Grid.Column>
+							) : (
+								<Grid.Row>
+									<Grid.Column style={{ width: "30%" }}>
+										<div>
 											<Profile fontSize={"3em"} mobile={this.state.mobile} />
 											<Menu fontSize={"3em"} />
-										</Grid.Row>
+										</div>
 									</Grid.Column>
-								)}
-							</Grid>
-						);
-					}}
-				/>
-			</Switch>
+									<Grid.Column style={{ width: "70%" }}>
+										<About mobile={this.state.mobile} />
+									</Grid.Column>
+								</Grid.Row>
+							);
+						}}
+					/>
+					<Route
+						exact
+						path="/projects"
+						render={() => {
+							return this.state.mobile ? (
+								<Grid.Column style={{ width: "100%" }}>
+									<Projects mobile={this.state.mobile} />
+								</Grid.Column>
+							) : (
+								<Grid.Row>
+									<Grid.Column style={{ width: "30%" }}>
+										<div>
+											<Profile fontSize={"3em"} mobile={this.state.mobile} />
+											<Menu fontSize={"3em"} />
+										</div>
+									</Grid.Column>
+
+									<Grid.Column style={{ width: "70%" }}>
+										<Projects mobile={this.state.mobile} />
+									</Grid.Column>
+								</Grid.Row>
+							);
+						}}
+					/>
+					<Route
+						exact
+						path="/"
+						render={() => {
+							console.log("inside switch /root, render");
+							console.log("----------------------------");
+
+							return this.state.mobile ? (
+								<Grid.Column style={{ width: "100%" }}>
+									<Profile fontSize={"2em"} mobile={this.state.mobile} />
+									<Menu fontSize={"2em"} />
+								</Grid.Column>
+							) : (
+								<Grid.Column>
+									<Grid.Row>
+										<Profile fontSize={"3em"} mobile={this.state.mobile} />
+										<Menu fontSize={"3em"} />
+									</Grid.Row>
+								</Grid.Column>
+							);
+						}}
+					/>
+				</Switch>
+			</Grid>
 		);
 	}
 }
