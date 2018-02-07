@@ -89,7 +89,7 @@ const About = props => {
 											fontWeight: "bold",
 											backgroundColor: "#f9fafc",
 											border: "1px solid #eaf1f9",
-											minWidth: "200px"
+											minWidth: props.mobile ? "175px" : "200px"
 										}}
 									>
 										<div
@@ -147,7 +147,7 @@ const About = props => {
 											fontWeight: "bold",
 											backgroundColor: "#f9fafc",
 											border: "1px solid #eaf1f9",
-											minWidth: "200px"
+											minWidth: props.mobile ? "175px" : "200px"
 										}}
 									>
 										<div
