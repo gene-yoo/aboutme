@@ -85,18 +85,18 @@ const About = props => {
 										style={{
 											display: "inline-block",
 											verticalAlign: "middle",
-											margin: "0.5em",
+											margin: props.mobile ? "0.25em" : "0.5em",
 											fontWeight: "bold",
 											backgroundColor: "#f9fafc",
 											border: "1px solid #eaf1f9",
-											minWidth: props.mobile ? "175px" : "200px"
+											minWidth: "185px"
 										}}
 									>
 										<div
 											style={{
 												display: "inline-block",
-												width: "2.5em",
-												height: "2.5em",
+												width: "2em",
+												height: "2em",
 												backgroundColor: "#363c44",
 												color: "white",
 												textAlign: "center"
@@ -110,7 +110,7 @@ const About = props => {
 													position: "absolute"
 												}}
 											/>
-											<div style={{ position: "relative", top: "23%" }}>
+											<div style={{ position: "relative", top: "15%" }}>
 												{skill.name[0].toUpperCase()}
 											</div>
 										</div>
@@ -118,12 +118,12 @@ const About = props => {
 											style={{
 												display: "inline-block",
 												fontColor: "black",
-												height: "2.5em",
+												height: "2em",
 												paddingLeft: "0.25em",
 												paddingRight: "0.5em"
 											}}
 										>
-											<div style={{ position: "relative", top: "23%" }}>
+											<div style={{ position: "relative", top: "15%" }}>
 												{skill.name.slice(1)}
 											</div>
 										</div>
@@ -143,18 +143,18 @@ const About = props => {
 										style={{
 											display: "inline-block",
 											verticalAlign: "middle",
-											margin: "0.5em",
+											margin: props.mobile ? "0.25em" : "0.5em",
 											fontWeight: "bold",
 											backgroundColor: "#f9fafc",
 											border: "1px solid #eaf1f9",
-											minWidth: props.mobile ? "175px" : "200px"
+											minWidth: "185px"
 										}}
 									>
 										<div
 											style={{
 												display: "inline-block",
-												width: "2.5em",
-												height: "2.5em",
+												width: "2em",
+												height: "2em",
 												backgroundColor: "#363c44",
 												color: "white",
 												textAlign: "center"
@@ -168,7 +168,7 @@ const About = props => {
 													position: "absolute"
 												}}
 											/>
-											<div style={{ position: "relative", top: "23%" }}>
+											<div style={{ position: "relative", top: "15%" }}>
 												{skill.name[0].toUpperCase()}
 											</div>
 										</div>
@@ -176,12 +176,12 @@ const About = props => {
 											style={{
 												display: "inline-block",
 												fontColor: "black",
-												height: "2.5em",
+												height: "2em",
 												paddingLeft: "0.25em",
 												paddingRight: "0.5em"
 											}}
 										>
-											<div style={{ position: "relative", top: "23%" }}>
+											<div style={{ position: "relative", top: "15%" }}>
 												{skill.name.slice(1)}
 											</div>
 										</div>
@@ -195,7 +195,7 @@ const About = props => {
 							"Gene's interests are rooted in demystifying technology so that companies can employ new ideas quickly and engage their customers in meaningful ways. With a background in Strategy Consulting and Web Development, he is able to work effectively across both business and engineering teams to deliver tangible results."
 						}
 					</div>
-					<div>
+					<div style={{ marginBottom: "1em" }}>
 						{"All inquiries may be directed to: "}
 						<a
 							href="mailto:gene.y.yoo@gmail.com?Subject=General%20Inquiry"

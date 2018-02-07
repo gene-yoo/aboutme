@@ -34,7 +34,7 @@ class Home extends Component {
 		console.log("state: ", this.state);
 		console.log("----------------------------");
 
-		if (window.innerWidth <= 800) {
+		if (window.innerWidth <= 1000) {
 			this.setState({ mobile: true });
 		} else {
 			this.setState({ mobile: false });
