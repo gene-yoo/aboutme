@@ -12,7 +12,6 @@ class Menu extends Component {
 			photography: true,
 			contact: true,
 			github: true,
-			instagram: true,
 			hovered: ""
 		};
 	}
@@ -132,12 +131,6 @@ class Menu extends Component {
 				icon: "medium",
 				type: "external",
 				link: "https://medium.com/@gene.y.yoo"
-			},
-			{
-				name: "instagram",
-				icon: "instagram",
-				type: "external",
-				link: "https://www.instagram.com/geneyoo/"
 			}
 		];
 
