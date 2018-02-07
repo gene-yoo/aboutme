@@ -8,29 +8,39 @@ const About = props => {
 
 	let frontend = [
 		{
-			name: "HTML-CSS-JS",
-			logo: "https://i.imgur.com/4MEztSg.png",
-			height: "75px"
+			name: "HTML",
+			color: "rgb(233,50,0)"
 		},
-		{ name: "React", logo: "https://i.imgur.com/3W9ogTR.png", height: "55px" },
-		{ name: "Redux", logo: "https://i.imgur.com/8r8hjWk.png", height: "50px" }
+		{
+			name: "CSS",
+			color: "rgb(0,103,138)"
+		},
+		{
+			name: "Javascript",
+			color: "rgb(234,152,0)"
+		},
+		{
+			name: "React",
+			color: "rgb(0,217,255)"
+		},
+		{
+			name: "Redux",
+			color: "rgb(129,47,142)"
+		}
 	];
 
 	let backend = [
 		{
 			name: "Ruby",
-			logo: "https://i.imgur.com/FBctcAX.png",
-			height: "50px"
+			color: "rgb(174,0,0)"
 		},
 		{
-			name: "Rails",
-			logo: "https://i.imgur.com/qWSbInD.png",
-			height: "50px"
+			name: "Ruby on Rails",
+			color: "rgb(219,0,0)"
 		},
 		{
 			name: "SQL",
-			logo: "https://i.imgur.com/vg62lBx.png",
-			height: "75px"
+			color: "rgb(0,101,153)"
 		}
 	];
 
@@ -61,63 +71,129 @@ const About = props => {
 					<div style={{ marginBottom: "1em" }}>
 						{"Gene Yoo is a full stack web developer based in Manhattan, NY."}
 					</div>
-					<div style={{ marginBottom: "1em" }}>
-						{
-							"Gene's interests are rooted in demystifying technology so that companies can employ new ideas quickly and engage their customers in meaningful ways. With a background in Strategy Consulting and Web Development, he is able to work effectively across both business and engineering teams to deliver tangible results."
-						}
-					</div>
 					<div>{"Gene's technical proficiency includes:"}</div>
 					<div style={{ marginTop: "1em", marginBottom: "1em" }}>
-						<div style={{ position: "relative", left: "1em" }}>
-							<span style={{ fontSize: "0.75em", fontWeight: "bold" }}>
-								{"Frontend: "}
-							</span>
+						<div
+							style={{
+								position: "relative",
+								left: "0.5em"
+							}}
+						>
 							{frontend.map(skill => {
 								return (
 									<div
 										style={{
-											display: props.mobile ? "block" : "inline-block",
-											margin: "1em"
+											display: "inline-block",
+											verticalAlign: "middle",
+											margin: "0.5em",
+											fontWeight: "bold",
+											backgroundColor: "#f9fafc",
+											border: "1px solid #eaf1f9",
+											minWidth: "200px"
 										}}
-										key={skill.name}
 									>
-										<img
-											src={skill.logo}
+										<div
 											style={{
-												maxHeight: skill.height,
-												verticalAlign: "middle"
+												display: "inline-block",
+												width: "2.5em",
+												height: "2.5em",
+												backgroundColor: "#363c44",
+												color: "white",
+												textAlign: "center"
 											}}
-											alt={skill.name}
-										/>
+										>
+											<div
+												style={{
+													width: "10px",
+													height: "10px",
+													backgroundColor: skill.color,
+													position: "absolute"
+												}}
+											/>
+											<div style={{ position: "relative", top: "23%" }}>
+												{skill.name[0].toUpperCase()}
+											</div>
+										</div>
+										<div
+											style={{
+												display: "inline-block",
+												fontColor: "black",
+												height: "2.5em",
+												paddingLeft: "0.25em",
+												paddingRight: "0.5em"
+											}}
+										>
+											<div style={{ position: "relative", top: "23%" }}>
+												{skill.name.slice(1)}
+											</div>
+										</div>
 									</div>
 								);
 							})}
 						</div>
-						<div style={{ position: "relative", left: "20px" }}>
-							<span style={{ fontSize: "0.75em", fontWeight: "bold" }}>
-								{"Backend: "}
-							</span>
+						<div
+							style={{
+								position: "relative",
+								left: "0.5em"
+							}}
+						>
 							{backend.map(skill => {
 								return (
 									<div
 										style={{
-											display: props.mobile ? "block" : "inline-block",
-											margin: "1em"
+											display: "inline-block",
+											verticalAlign: "middle",
+											margin: "0.5em",
+											fontWeight: "bold",
+											backgroundColor: "#f9fafc",
+											border: "1px solid #eaf1f9",
+											minWidth: "200px"
 										}}
-										key={skill.name}
 									>
-										<img
-											src={skill.logo}
+										<div
 											style={{
-												maxHeight: skill.height,
-												verticalAlign: "middle"
+												display: "inline-block",
+												width: "2.5em",
+												height: "2.5em",
+												backgroundColor: "#363c44",
+												color: "white",
+												textAlign: "center"
 											}}
-											alt={skill.name}
-										/>
+										>
+											<div
+												style={{
+													width: "10px",
+													height: "10px",
+													backgroundColor: skill.color,
+													position: "absolute"
+												}}
+											/>
+											<div style={{ position: "relative", top: "23%" }}>
+												{skill.name[0].toUpperCase()}
+											</div>
+										</div>
+										<div
+											style={{
+												display: "inline-block",
+												fontColor: "black",
+												height: "2.5em",
+												paddingLeft: "0.25em",
+												paddingRight: "0.5em"
+											}}
+										>
+											<div style={{ position: "relative", top: "23%" }}>
+												{skill.name.slice(1)}
+											</div>
+										</div>
 									</div>
 								);
 							})}
 						</div>
+					</div>
+					<div style={{ marginBottom: "1em" }}>
+						{
+							"Gene's interests are rooted in demystifying technology so that companies can employ new ideas quickly and engage their customers in meaningful ways. With a background in Strategy Consulting and Web Development, he is able to work effectively across both business and engineering teams to deliver tangible results."
+						}
 					</div>
 					<div>
 						{"All inquiries may be directed to: "}
