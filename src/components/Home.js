@@ -51,7 +51,7 @@ class Home extends Component {
 					exact
 					path="/about"
 					render={() => {
-						return this.state.mobile ? (
+						return (
 							<Grid
 								container
 								centered
@@ -59,27 +59,23 @@ class Home extends Component {
 								columns={2}
 								style={{ marginTop: "2%" }}
 							>
-								<Grid.Column style={{ width: "100%" }}>
-									<About mobile={this.state.mobile} />
-								</Grid.Column>
-							</Grid>
-						) : (
-							<Grid
-								container
-								centered
-								stackable
-								columns={3}
-								style={{ marginTop: "2%" }}
-							>
-								<Grid.Column style={{ width: "30%" }}>
-									<div>
-										<Profile fontSize={"3em"} mobile={this.state.mobile} />
-										<Menu fontSize={"3em"} />
-									</div>
-								</Grid.Column>
-								<Grid.Column style={{ width: "70%" }}>
-									<About mobile={this.state.mobile} />
-								</Grid.Column>
+								{this.state.mobile ? (
+									<Grid.Column style={{ width: "100%" }}>
+										<About mobile={this.state.mobile} />
+									</Grid.Column>
+								) : (
+									<Grid.Row>
+										<Grid.Column style={{ width: "30%" }}>
+											<div>
+												<Profile fontSize={"3em"} mobile={this.state.mobile} />
+												<Menu fontSize={"3em"} />
+											</div>
+										</Grid.Column>
+										<Grid.Column style={{ width: "70%" }}>
+											<About mobile={this.state.mobile} />
+										</Grid.Column>
+									</Grid.Row>
+								)}
 							</Grid>
 						);
 					}}
@@ -88,36 +84,32 @@ class Home extends Component {
 					exact
 					path="/projects"
 					render={() => {
-						return this.state.mobile ? (
+						return (
 							<Grid
 								container
 								centered
 								stackable
-								columns={3}
+								columns={2}
 								style={{ marginTop: "2%" }}
 							>
-								<Grid.Column style={{ width: "100%" }}>
-									<Projects mobile={this.state.mobile} />
-								</Grid.Column>
-							</Grid>
-						) : (
-							<Grid
-								container
-								centered
-								stackable
-								columns={3}
-								style={{ marginTop: "2%" }}
-							>
-								<Grid.Column style={{ width: "30%" }}>
-									<div>
-										<Profile fontSize={"3em"} mobile={this.state.mobile} />
-										<Menu fontSize={"3em"} />
-									</div>
-								</Grid.Column>
+								{this.state.mobile ? (
+									<Grid.Column style={{ width: "100%" }}>
+										<Projects mobile={this.state.mobile} />
+									</Grid.Column>
+								) : (
+									<Grid.Row>
+										<Grid.Column style={{ width: "30%" }}>
+											<div>
+												<Profile fontSize={"3em"} mobile={this.state.mobile} />
+												<Menu fontSize={"3em"} />
+											</div>
+										</Grid.Column>
 
-								<Grid.Column style={{ width: "70%" }}>
-									<Projects mobile={this.state.mobile} />
-								</Grid.Column>
+										<Grid.Column style={{ width: "70%" }}>
+											<Projects mobile={this.state.mobile} />
+										</Grid.Column>
+									</Grid.Row>
+								)}
 							</Grid>
 						);
 					}}
