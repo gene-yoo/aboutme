@@ -65,10 +65,8 @@ class Home extends Component {
 							) : (
 								<Grid.Row>
 									<Grid.Column style={{ width: "30%" }}>
-										<div>
-											<Profile fontSize={"3em"} mobile={this.state.mobile} />
-											<Menu fontSize={"3em"} />
-										</div>
+										<Profile fontSize={"3em"} mobile={this.state.mobile} />
+										<Menu fontSize={"3em"} />
 									</Grid.Column>
 									<Grid.Column style={{ width: "70%" }}>
 										<About mobile={this.state.mobile} />
@@ -88,10 +86,8 @@ class Home extends Component {
 							) : (
 								<Grid.Row>
 									<Grid.Column style={{ width: "30%" }}>
-										<div>
-											<Profile fontSize={"3em"} mobile={this.state.mobile} />
-											<Menu fontSize={"3em"} />
-										</div>
+										<Profile fontSize={"3em"} mobile={this.state.mobile} />
+										<Menu fontSize={"3em"} />
 									</Grid.Column>
 
 									<Grid.Column style={{ width: "70%" }}>
@@ -108,16 +104,14 @@ class Home extends Component {
 							console.log("inside switch /root, render");
 							console.log("----------------------------");
 
-							return this.state.mobile ? (
-								<Grid.Column style={{ width: "100%" }}>
-									<Profile fontSize={"2em"} mobile={this.state.mobile} />
-									<Menu fontSize={"2em"} />
-								</Grid.Column>
-							) : (
+							return (
 								<Grid.Column>
 									<Grid.Row>
-										<Profile fontSize={"3em"} mobile={this.state.mobile} />
-										<Menu fontSize={"3em"} />
+										<Profile
+											fontSize={this.state.mobile ? "2em" : "3em"}
+											mobile={this.state.mobile}
+										/>
+										<Menu fontSize={this.state.mobile ? "2em" : "3em"} />
 									</Grid.Row>
 								</Grid.Column>
 							);
