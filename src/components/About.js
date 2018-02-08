@@ -65,7 +65,7 @@ const About = props => {
 						lineHeight: "1.5",
 						marginLeft: "1em",
 						marginRight: "1em",
-						marginTop: "2em"
+						marginTop: "1em"
 					}}
 				>
 					<div style={{ marginBottom: "1em" }}>
